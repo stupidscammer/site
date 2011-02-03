@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta   arset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <title>JSHint, The JavaScript Code Quality Tool</title>
+    <meta name="description" content="JSHint is a fork of Douglas Crockford's JSLint that does not tyrannize your code.">
+    <meta name="author" content="Anton Kovalyov / JSHint Community">
+
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Droid+Sans:regular,bold">
+
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/modernizr.js"></script>
+  </head>
+
+  <body>
+    <header class="clearfix">
+      <h1>JSHint</h1>
+
+      <nav>
+        <ul>
+          <li><a href="http://github.com/">Download</a></li>
+          <li><a href="http://github.com/">Learn</a></li>
+          <li><a href="http://github.com/">Contribute</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <article>
+      <p>JSHint is a fork of Douglas Crockford's <a href="http://jslint.com/">JSLint</a> that does
+        not tyrannize your code. It is designed to detect errors that actually break your code while
+        skipping things that, according to Crockford, &ldquo;are known to contribute mistakes in projects&rdquo;.
+        In other words, JSHint is a fork of JSLint for the real world.</p>
+
+      <p>The most important part is that JSHint is developed and supported by the JavaScript
+        developers community and not by one very opinionated person.</p>
+    </article>
+
+    <div class="code">
+      <h1>Your Code</h1>
+      <textarea placeholder="// Your code goes here" id="code"></textarea>
+      <div class="buttons">
+        <button>JSHint</button>
+      </div>
+    </div>
+
+    <div class="options">
+      <h1>Options</h1>
+
+      <div class="wrapper">
+        <div class="option">
+          <input type="checkbox">
+          <label>Stop on first error</label>
+        </div>
+
+        <div class="option">
+          <input type="checkbox">
+          <label>Strict whitespace</label>
+        </div>
+
+        <div class="option">
+          <input type="checkbox">
+          <label>Assume a browser</label>
+        </div>
+
+        <div class="option">
+          <input type="checkbox">
+          <label>Assume console, alert,..</label>
+        </div>
+
+        <div class="option">
+          <input type="checkbox">
+          <label>Assume a Yahoo! Widget</label>
+        </div>
+
+        <div class="option">
+          <input type="checkbox">
+          <label>Assume Windows</label>
+        </div>
+
+        <div class="option">
+          <input type="checkbox">
+          <label>Assume Rhino</label>
+        </div>
+
+        <div class="option">
+          <input type="checkbox">
+          <label>Require curly braces</label>
+        </div>
+
+        <div class="option">
+          <input type="checkbox">
+          <label>Assume that you are a boss</label>
+        </div>
+
+        <div class="option">
+          <input type="checkbox">
+          <label>Assume Crockford</label>
+        </div>
+      </div>
+    </div>
+
+    <div class="errors clearfix">
+      <div class="error">
+        <p>Problem at line 2 character 3: Expected 'var' at column 5, not column 3.</p>
+        <code>var statusHTML = [];</code>
+      </div>
+
+      <div class="error">
+        <p>Problem at line 3 character 3: Expected 'for' at column 5, not column 3.</p>
+        <code>for (var i=0; i<twitters.length; i++) {</code>
+      </div>
+
+      <div class="error">
+        <p>Problem at line 3 character 8: Move 'var' declarations to the top of the function.</p>
+        <code>for (var i=0; i<twitters.length; i++) {</code>
+      </div>
+
+      <div class="error">
+        <p>Problem at line 3 character 8: Stopping. (7% scanned).</p>
+        <code>Unused variable: statusHTML 1 twitterCallback 2</code>
+      </div>
+    </div>
+
+    <footer>
+      <p>JSHint, by JSHint Community.</p>
+    </footer>
+  </body>
+</html>

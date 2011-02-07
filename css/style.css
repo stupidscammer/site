@@ -177,12 +177,30 @@ div.code button {
 
 div.options {
   float: left;
+  font-family: "Droid Sans", Arial, Serif;
   width: 400px;
+  margin-bottom: 40px;
 }
 
 div.options h1 {
   font-size: 160%;
   margin-bottom: 10px;
+}
+
+div.options h4 {
+  color: #444;
+  font-size: 120%;
+  margin: 20px 0 10px 0;
+  font-weight: normal;
+}
+
+div.options a {
+  color: #0088BF;
+}
+
+div.options p {
+  text-align: center;
+  margin-top: 20px;
 }
 
 div.options div.wrapper {
@@ -225,6 +243,7 @@ div.error code {
 }
 
 footer {
+  clear: both;
   background-color: #262626;
   font-size: 120%;
   font-family: "Droid Sans", Arial, Serif;

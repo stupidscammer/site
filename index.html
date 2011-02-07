@@ -12,7 +12,10 @@
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Droid+Sans:regular,bold">
 
     <link rel="stylesheet" href="css/style.css">
-    <script src="js/modernizr.js"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/jshint.js"></script>
+    <script src="js/core.js"></script>
+    <!--<script src="js/modernizr.js"></script>-->
   </head>
 
   <body>
@@ -51,80 +54,99 @@
 
       <div class="wrapper">
         <div class="option">
-          <input type="checkbox">
-          <label>Stop on first error</label>
+          <input type="checkbox" name="bitwise" id="option_bitwise">
+          <label for="option_bitwise">If bitwise operators should not be allowed</label>
         </div>
 
         <div class="option">
-          <input type="checkbox">
-          <label>Strict whitespace</label>
+          <input type="checkbox" name="boss" id="option_boss">
+          <label for="option_boss">If assignments inside if/for/while/do should be allowed (use them like a boss)</label>
         </div>
 
         <div class="option">
-          <input type="checkbox">
-          <label>Assume a browser</label>
+          <input type="checkbox" name="curly" id="option_curly">
+          <label for="option_curly">If curly braces around blocks should be required (even in if/for/while)</label>
         </div>
 
         <div class="option">
-          <input type="checkbox">
-          <label>Assume console, alert,..</label>
+          <input type="checkbox" name="debug" id="option_debug" checked>
+          <label for="option_debug">If debugger statements should be allowed</label>
         </div>
 
         <div class="option">
-          <input type="checkbox">
-          <label>Assume a Yahoo! Widget</label>
+          <input type="checkbox" name="devel" id="option_devel" checked>
+          <label for="option_devel">If logging should be allowed</label>
         </div>
 
         <div class="option">
-          <input type="checkbox">
-          <label>Assume Windows</label>
+          <input type="checkbox" name="eqeqeq" id="option_eqeqeq">
+          <label for="option_eqeqeq">If === should be required</label>
         </div>
 
         <div class="option">
-          <input type="checkbox">
-          <label>Assume Rhino</label>
+          <input type="checkbox" name="evil" id="option_evil">
+          <label for="option_evil">If eval should be tolerated</label>
         </div>
 
         <div class="option">
-          <input type="checkbox">
-          <label>Require curly braces</label>
+          <input type="checkbox" name="forin" id="option_forin" checked>
+          <label for="option_forin">If for in statements must filter</label>
         </div>
 
         <div class="option">
-          <input type="checkbox">
-          <label>Assume that you are a boss</label>
+          <input type="checkbox" name="laxbreak" id="option_laxbreak">
+          <label for="option_laxbreak">If line breaks should not be checked</label>
         </div>
 
         <div class="option">
-          <input type="checkbox">
-          <label>Assume Crockford</label>
+          <input type="checkbox" name="passfail" id="option_passfail">
+          <label for="option_passfail">If the scan should stop on first error</label>
         </div>
+
+        <div class="option">
+          <input type="checkbox" name="undef" id="option_undef" checked>
+          <label for="option_undef">If variables should be declared before used</label>
+        </div>
+
+        <div class="option">
+          <input type="checkbox" name="white" id="option_white">
+          <label for="option_white">If strict whitespace rules apply</label>
+        </div>
+
+        <h4>Environment:</h4>
+
+        <div class="option">
+          <input type="checkbox" name="browser" id="option_browser" checked>
+          <label for="option_browser">Browser</label>
+        </div>
+
+        <div class="option">
+          <input type="checkbox" name="es5" id="option_es5">
+          <label for="option_es5">ES5</label>
+        </div>
+
+        <div class="option">
+          <input type="checkbox" name="node" id="option_node">
+          <label for="option_node">Node.js</label>
+        </div>
+
+        <div class="option">
+          <input type="checkbox" name="rhino" id="option_rhino">
+          <label for="option_rhino">Rhino</label>
+        </div>
+
+        <div class="option">
+          <input type="checkbox" name="widget" id="option_widget">
+          <label for="option_widget">Yahoo! Widget</label>
+        </div>
+
+        <p><a href="#">See all options</a></p>
       </div>
     </div>
 
-    <div class="errors clearfix">
-      <div class="error">
-        <p>Problem at line 2 character 3: Expected 'var' at column 5, not column 3.</p>
-        <code>var statusHTML = [];</code>
-      </div>
+    <div class="errors clearfix hidden"></div>
 
-      <div class="error">
-        <p>Problem at line 3 character 3: Expected 'for' at column 5, not column 3.</p>
-        <code>for (var i=0; i<twitters.length; i++) {</code>
-      </div>
-
-      <div class="error">
-        <p>Problem at line 3 character 8: Move 'var' declarations to the top of the function.</p>
-        <code>for (var i=0; i<twitters.length; i++) {</code>
-      </div>
-
-      <div class="error">
-        <p>Problem at line 3 character 8: Stopping. (7% scanned).</p>
-        <code>Unused variable: statusHTML 1 twitterCallback 2</code>
-      </div>
-    </div>
-
-    <footer>
+    <footer class="clearfix">
       <p>JSHint, by JSHint Community.</p>
     </footer>
   </body>

@@ -1,5 +1,14 @@
 $(document).ready(function () {
     $("div.code button").click(function () {
-        alert(JSHINT($("div.code textarea").val()));
+        var options = {},
+            code    = $("div.code textarea").val(),
+            passed;
+
+        // Get checked options
+        $("div.option input:checked").each(function () {
+            options[$(this).attr("name")] = true;
+        });
+
+        passed = JSHINT(code, options);
     });
 });

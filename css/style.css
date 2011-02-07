@@ -100,6 +100,7 @@ button {  width: auto; overflow: visible; }
 body {
   background-image: url("../img/bg.png");
   color: #f6f6f6;
+  font-family: "Droid Sans", Arial, Serif;
 }
 
 a, a:active, a:visited, a:hover {
@@ -246,6 +247,5 @@ footer {
   clear: both;
   background-color: #262626;
   font-size: 120%;
-  font-family: "Droid Sans", Arial, Serif;
   padding: 40px;
 }

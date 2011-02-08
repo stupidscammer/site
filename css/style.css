@@ -159,6 +159,7 @@ div.code textarea {
   border: solid 1px white;
   -webkit-border-radius: 5px;
   padding: 10px;
+  font-family: "Inconsolata", Arial, Serif;
 }
 
 div.code div.buttons {

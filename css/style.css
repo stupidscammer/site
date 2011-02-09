@@ -177,35 +177,48 @@ div.code button {
   -webkit-border-radius: 5px;
 }
 
-div.options {
+div.sidebar {
   float: left;
   font-family: "Droid Sans", Arial, Serif;
   width: 400px;
   margin-bottom: 40px;
 }
 
-div.options h1 {
-  font-size: 160%;
+div.sidebar nav ul {
   margin-bottom: 10px;
 }
 
-div.options h4 {
+div.sidebar nav ul li {
+  font-family: "Droid Sans", Arial, Serif;
+  font-weight: bold;
+  font-size: 160%;
+  display: inline;
+  margin-right: 15px;
+}
+
+div.sidebar nav ul li a {
+  color: #a5b8d6;
+  text-decoration: none;
+  border-bottom: dashed 1px #a5b8d6;
+}
+
+div.sidebar h4 {
   color: #444;
   font-size: 120%;
   margin: 20px 0 10px 0;
   font-weight: normal;
 }
 
-div.options a {
+div.sidebar a {
   color: #0088BF;
 }
 
-div.options p {
+div.sidebar div.options p {
   text-align: center;
   margin-top: 20px;
 }
 
-div.options div.wrapper {
+div.sidebar div.wrapper {
   background-color: #f6f6f6;
   padding: 10px;
   -webkit-border-radius: 5px;
@@ -222,26 +235,8 @@ div.option input {
   margin-right: 5px;
 }
 
-div.errors {
-  clear: both;
-  width: 900px;
+div.sidebar div.output {
   color: #444;
-  background-color: #f6f6f6;
-  margin: 20px 40px;
-  padding: 10px;
-  -webkit-border-radius: 5px;
-}
-
-div.error {
-  margin-bottom: 15px;
-}
-
-div.error p {
-  margin-bottom: 10px;
-}
-
-div.error code {
-  margin-left: 40px;
 }
 
 footer {

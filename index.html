@@ -51,10 +51,15 @@
       </div>
     </div>
 
-    <div class="options">
-      <h1>Options</h1>
+    <div class="sidebar">
+      <nav>
+        <ul>
+          <li data-target="options">Options</li>
+          <li data-target="output"><a href="#">Output</a></li>
+        </ul>
+      </nav>
 
-      <div class="wrapper">
+      <div class="options wrapper">
         <div class="option">
           <input type="checkbox" name="bitwise" id="option_bitwise">
           <label for="option_bitwise">Disallow bitwise operators</label>
@@ -144,9 +149,11 @@
 
         <p><a href="docs.html">See all options</a></p>
       </div>
-    </div>
 
-    <div class="errors clearfix hidden"></div>
+      <div class="output wrapper hidden">
+        <p>Enter your code into the textarea on the left and press JSHint.</p>
+      </div>
+    </div>
 
     <footer class="clearfix">
       <p>JSHint, by JSHint Community.</p>

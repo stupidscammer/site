@@ -1,15 +1,48 @@
 $(document).ready(function () {
+    function onPass() {
+        var output   = $("div.output.wrapper"),
+            template = $("#passOutput");
+
+        output.removeClass("fail");
+        output.addClass("pass");
+        output.html(template.tmpl(JSHINT.data()));
+    }
+
+    function onFail() {
+        var output   = $("div.output.wrapper"),
+            template = $("#failOutput");
+
+        output.removeClass("pass");
+        output.addClass("fail");
+        output.html(template.tmpl(JSHINT.data()));
+    }
+
+    function onEmpty() {
+        var output   = $("div.output.wrapper"),
+            template = $("#emptyOutput");
+
+        output.html(template.tmpl());
+    }
+
     $("div.code button").click(function () {
         var options = {},
             code    = $("div.code textarea").val(),
-            passed;
+            output  = $("div.sidebar li[data-target=output] a");
 
         // Get checked options
         $("div.option input:checked").each(function () {
             options[$(this).attr("name")] = true;
         });
 
-        passed = JSHINT(code, options);
+        if (jQuery.trim(code) === "")
+            onEmpty();
+        else if (JSHINT(code, options))
+            onPass();
+        else
+            onFail();
+
+        if (output)
+            output.trigger("click");
     });
 
     $("div.sidebar nav ul li a").live("click", function (ev) {

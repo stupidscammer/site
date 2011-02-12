@@ -239,6 +239,46 @@ div.sidebar div.output {
   color: #444;
 }
 
+div.output ul {
+  margin-left: 10px;
+}
+
+div.output ul li {
+  list-style-type: none;
+  margin-top: 10px;
+}
+
+div.output ul li p {
+  margin: 0 0 5px 0;
+}
+
+div.output ul li code {
+  font-family: "Inconsolata", Arial, Serif;
+  margin-left: 10px;
+}
+
+div.output mark {
+  font-style: normal;
+  font-weight: normal;
+  padding: 3px 5px;
+  border-radius: 3px;
+}
+
+div.output cite {
+  display: block;
+  text-align: right;
+  margin-top: 10px;
+}
+
+div.pass mark {
+  background-color: green;
+  color: white;
+}
+
+div.fail mark {
+  background-color: red;
+}
+
 footer {
   clear: both;
   background-color: #262626;

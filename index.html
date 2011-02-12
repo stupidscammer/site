@@ -12,10 +12,10 @@
 
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Droid+Sans:regular,bold">
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Inconsolata">
-
-
     <link rel="stylesheet" href="css/style.css">
+
     <script src="js/jquery.js"></script>
+    <script src="js/jquery.tmpl.js"></script>
     <script src="js/jshint.js"></script>
     <script src="js/core.js"></script>
   </head>
@@ -158,5 +158,42 @@
     <footer class="clearfix">
       <p>JSHint, by JSHint Community.</p>
     </footer>
+
+    <!-- Templates -->
+    <script id="failOutput" type="text/x-jquery-tmpl">
+      <p>The code check <mark>failed.</mark></p>
+
+      {{if errors}}
+        <h4>Errors:</h4>
+
+        <ul>
+        {{each(i, error) errors}}
+          <li>
+            <p><strong>Line ${error.line}</strong><code>${error.evidence}</code></p>
+            <p>${error.reason}</p>
+          </li>
+        {{/each}}
+        </ul>
+      {{/if}}
+    </script>
+
+    <script id="passOutput" type="text/x-jquery-tmpl">
+      <p>The code check <mark>passed.</mark></p>
+
+      {{if implieds}}
+        <h4>Implied globals:</h4>
+
+        <ul>
+        {{each(i, global) implieds}}
+          <li><strong>${global.name}</strong> on lines ${global.line.join(',')}</li>
+        {{/each}}
+        </ul>
+      {{/if}}
+    </script>
+
+    <script id="emptyOutput" type="text/x-jquery-tmpl">
+      <blockquote>He who fights with monsters should look to it that he himself does not become a monster. And when you gaze long into an abyss the abyss also gazes into you.</blockquote>
+      <cite>Friedrich Nietzsche</cite>
+    </script>
   </body>
 </html>

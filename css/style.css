@@ -225,9 +225,15 @@ div.sidebar div.wrapper {
 }
 
 div.option {
-  color: #444;
+  color: hsl(0, 0%, 27%);
   font-size: 110%;
-  margin-bottom: 10px;
+  margin-bottom: 1px;
+  padding: 3px;
+  border-radius: 3px;
+}
+
+div.option:hover {
+  background: hsl(0, 0%, 87%);
 }
 
 div.option input {

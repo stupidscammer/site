@@ -27,7 +27,7 @@
       <nav>
         <ul>
           <li><a href="jshint.js">Download</a></li>
-          <li><a href="docs.html">Learn</a></li>
+          <li><a href="#docs">Learn</a></li>
           <li><a href="http://github.com/jshint/jshint/">Contribute</a></li>
         </ul>
       </nav>
@@ -154,6 +154,189 @@
         <p>Enter your code into the textarea on the left and press JSHint.</p>
       </div>
     </div>
+
+    <section id="docs">
+      <h1>Documentation</h1>
+
+      <div>
+        <article>
+          <h2>Usage</h2>
+
+          <p>JSHINT is a global function. It takes two parameters.</p>
+
+          <p><code>var result = JSHINT(source, options);</code></p>
+
+          <p>The first parameter is either a string or an array of strings.
+          If it is a string, it will be split on '\n' or '\r'. If it is an
+          array of strings, it is assumed that each string represents one line.
+          The source can be a JavaScript or a JSON text.</p>
+
+          <p>If it checks out, JSHINT returns true. Otherwise, it returns false.</p>
+
+          <p>If false, you can inspect JSHINT.errors to find out problems or request a
+          complete data structure using JSHINT.data(). For more information, read JSHint
+          source code (it has useful comments).</p>
+
+          <p>You can also set options in-file.</p>
+
+          <p><code>/*jshint evil: true, boss: true */</code></p>
+
+          <p>You can also let JSHint know what global variables it should expect.</p>
+
+          <p><code>/*global DISQUS: true, jQuery: false */</code></p>
+
+          <p>Above, JSHint will allow you to override DISQUS but complain if you try to
+          override jQuery.</p>
+        </article>
+
+        <article>
+          <h2>bitwise</h2>
+
+          <p></p>
+        </article>
+
+        <article>
+          <h2>boss</h2>
+
+          <p></p>
+        </article>
+
+        <article>
+          <h2>curly</h2>
+
+          <p></p>
+        </article>
+
+        <article>
+          <h2>debug</h2>
+
+          <p></p>
+        </article>
+
+        <article>
+          <h2>devel</h2>
+
+          <p></p>
+        </article>
+
+        <article>
+          <h2>eqeqeq</h2>
+
+          <p></p>
+        </article>
+
+        <article>
+          <h2>evil</h2>
+
+          <p></p>
+        </article>
+
+        <article>
+          <h2>forin</h2>
+
+          <p></p>
+        </article>
+
+        <article>
+          <h2>immed</h2>
+
+          <p></p>
+        </article>
+
+        <article>
+          <h2>laxbreak</h2>
+
+          <p></p>
+        </article>
+
+        <article>
+          <h2>newcap</h2>
+
+          <p></p>
+        </article>
+
+        <article>
+          <h2>noarg</h2>
+
+          <p></p>
+        </article>
+
+        <article>
+          <h2>noempty</h2>
+
+          <p></p>
+        </article>
+
+        <article>
+          <h2>nonew</h2>
+
+          <p></p>
+        </article>
+
+        <article>
+          <h2>nomen</h2>
+
+          <p></p>
+        </article>
+
+        <article>
+          <h2>onevar</h2>
+
+          <p></p>
+        </article>
+
+        <article>
+          <h2>passfail</h2>
+
+          <p></p>
+        </article>
+
+        <article>
+          <h2>plusplus</h2>
+
+          <p></p>
+        </article>
+
+        <article>
+          <h2>regexp</h2>
+
+          <p></p>
+        </article>
+
+        <article>
+          <h2>undef</h2>
+
+          <p></p>
+        </article>
+
+        <article>
+          <h2>strict</h2>
+
+          <p></p>
+        </article>
+
+        <article>
+          <h2>white</h2>
+
+          <p></p>
+        </article>
+
+        <article class="last">
+          <h2>Environments</h2>
+
+          <p>You can also let JSHint know when your code is running in a specific environment.
+          This will help it to recognize specific pre-defined global variables.</p>
+
+          <p>Currently supported environments:</p>
+
+          <ul>
+            <li>Browser (browser)</li>
+            <li><a href="http://en.wikipedia.org/wiki/ECMAScript#ECMAScript.2C_5th_Edition">ES5</a> (es5)</li>
+            <li><a href="http://nodejs.org/">Node.js</a> (node)</li>
+            <li><a href="http://www.mozilla.org/rhino/">Rhino</a> (rhino)</li>
+          </ul>
+      </div>
+    </section>
 
     <footer class="clearfix">
       <p>JSHint, by JSHint Community.</p>

@@ -129,7 +129,10 @@ header nav ul li {
   display: inline;
   margin-left: 20px;
 }
-
+ 
+header nav a:hover {
+  color: #b9e6fa;
+}
 article, 
 #applyarea,
 #docs {
@@ -174,12 +177,24 @@ div.code button,
 a.button {
   font-size: 120%;
   background-color: #262626;
+  background-image: -moz-linear-gradient(90deg, #000, #444);
+  background-image: -webkit-gradient(linear, 0 0, 0% 100%, from(#000), to(#444));  
+  background-image: linear-gradient(90deg, #000, #444);
   color: #f6f6f6;
   border: 0;
   padding: 10px 15px;
   margin-top: 10px;
   -webkit-border-radius: 5px;
   text-decoration: none;
+}
+
+div.code button:hover,
+a.button:hover {
+  background-color: #000;
+  background-image: -moz-linear-gradient(90deg, #444, #000);
+  background-image: -webkit-gradient(linear, 0 0, 0% 100%, from(#444), to(#000));  
+  background-image: linear-gradient(90deg, #444, #000);
+  
 }
 
 div.sidebar {
@@ -215,15 +230,16 @@ div.sidebar h4 {
 }
 
 div.sidebar div.options p {
-  text-align: right;
   margin-top: 20px;
 }
 
 div.option {
   color: #ddd;
   font-size: 110%;
-  padding: 3px;
+  padding: 3px; 
+  width: 80%;
   border-radius: 3px;
+  position: relative;
 }
 
 div.option:hover {
@@ -234,6 +250,15 @@ div.option:hover {
 div.option input {
   vertical-align: text-bottom;
   margin-right: 5px;
+  position: absolute;
+  top: 0.5em;
+  left: 5px;
+}
+
+div.option label {
+  display: inline-block;
+  width: 93%;
+  margin-left: 7%;
 }
 
 div.output > p { margin-top: 2em; }

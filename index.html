@@ -204,25 +204,33 @@
         <article>
           <h2>curly</h2>
 
-          <p></p>
+          <p>If true, JSHint will require you to always use blocks with structured elements such as <code>if</code> and <code>while</code>.</p>
         </article>
 
         <article>
           <h2>debug</h2>
 
-          <p></p>
+          <p>If true, JSHint will allow usage of <code>debugger</code> statements. This statement is used to set a breakpoint in modern browsers.</p>
+
+          <p>It is a good idea to not to ship your code with <code>debugger</code> statements in it.
         </article>
 
         <article>
           <h2>devel</h2>
 
-          <p></p>
+          <p>If true, JSHint will allow usage of logging functions such as <code>console.log</code> and <code>alert</code>.</p>
+
+          <p>Using <code>console.log</code> in the production code can
+          be a bad idea if you expect it to be run in the Internet Explorer. IE does not support this function and fires an exception when you try to use it.</p>
         </article>
 
         <article>
           <h2>eqeqeq</h2>
 
-          <p></p>
+          <p>If true, JSHint will require you to use <code>===</code> and <code>!==</code> for all comparisons.</p>
+
+          <p>The <code>==</code> and <code>!=</code> operations do type coercion before comparing. Unless you know what are you
+          doing, you should always use <code>===</code> or <code>!===</code> when comparing to 0, '', undefined, null, false or true.</p>
         </article>
 
         <article>
@@ -234,7 +242,9 @@
         <article>
           <h2>forin</h2>
 
-          <p></p>
+          <p>If true, JSHint will disallow usage of <code>for in</code> without <code>hasOwnProperty</code>.</p>
+
+          <p>The <code>for in</code> statement is used to loop through the names of properties of an object, including those inherited through the prototype chain. Method <code>hasOwnPropery</code> is used to check if property belongs to an object or was inherited through the prototype chain.</p>
         </article>
 
         <article>

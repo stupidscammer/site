@@ -280,11 +280,12 @@ div.fail mark {
 section#docs {
   margin: 40px auto;
   clear: both;
-  color: #b9e6fa;
+  color: #b9e6fa; 
+  font-size: 1.2em;
 }
 
 section#docs a {
-  color: #0088BF;
+  color: #fff;
 }
 
 section#docs h1 {

@@ -157,11 +157,11 @@ div.code h1 {
 }
 
 div.code textarea {
-  width: 100%;
+  width: 98%;
   height: 32em;
   border: 0;
   -webkit-border-radius: 5px;
-  padding: 10px;
+  padding: 1%;
   font-family: "Inconsolata", Arial, Serif;
 }
 
@@ -185,8 +185,8 @@ a.button {
 div.sidebar {
   font-family: "Droid Sans", Arial, Serif;
   float: left; 
-  margin-left: 4%;
-  width: 46%;
+  margin-left: 3%;
+  width: 47%;
 
 }
 

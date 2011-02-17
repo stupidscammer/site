@@ -6,9 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
     <title>JSHint, The JavaScript Code Quality Tool</title>
-    <meta name="description" content="JSHint is a fork of Douglas Crockford's JSLint that does not tyrannize your code.">
-    <meta name="author" content="Anton Kovalyov / JSHint Community">
+    <meta name="description" content="The JavaScript Code Quality Tool">
+    <meta name="author" content="Anton Kovalyov">
+    <meta name="author" content="JSHint Community">
     <meta name="designer" content="Jamie Gillar">
+    <meta name="designer" content="Divya Manian">
 
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Droid+Sans:regular,bold">
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Inconsolata">
@@ -34,14 +36,15 @@
     </header>
 
     <article>
-      <p>JSHint is a fork of Douglas Crockford's <a href="http://jslint.com/">JSLint</a> that does
-        not tyrannize your code. It is designed to detect errors that actually break your code while
-        skipping things that, according to Crockford, &ldquo;are known to contribute mistakes in projects&rdquo;.
-        In other words, JSHint is a fork of JSLint for the real world.</p>
+      <p>JSHint is a tool to analyze JavaScript programs and detect various errors.
+      It works by parsing the source code, not running it, so it can assume different
+      execution environments. JSHint is very flexible so you can easily adjust it to
+      your project's coding conventions.</p>
 
-      <p>The most important part is that <a href="http://github.com/jshint/jshint/">JSHint is developed and supported</a>
-        by the JavaScript developers community and not by one very opinionated person.</p>
+      <p>JSHint is an open-source project that is supported and maintained by the
+      JavaScript developers community. The source code is available on <a href="http://github.com/jshint/jshint/">GitHub</a>.</p>
     </article>
+
     <section id="applyarea">
       <div class="code">
         <h1>Your Code</h1>
@@ -151,11 +154,12 @@
         <div class="output wrapper hidden">
           <p>Enter your code into the textarea on the left and press JSHint.</p>
         </div>
-      </div>      
+      </div>
     </section>
-    
+
     <section id="docs">
       <h1>Documentation</h1>
+
       <div>
         <article>
           <h2>Usage</h2>
@@ -179,7 +183,7 @@
 
           <p><code>/*jshint evil: true, boss: true */</code></p>
 
-          <p>You can also let JSHint know what global variables it should expect.</p>
+          <p>And let JSHint know what global variables it should expect.</p>
 
           <p><code>/*global DISQUS: true, jQuery: false */</code></p>
 
@@ -188,9 +192,47 @@
         </article>
 
         <article>
+          <h2>How JSHint is different from JSLint</h2>
+
+          <p>JSHint is a fork of Douglas Crockford's <a href="http://jslint.com/">JSLint</a>
+          that does not tyrannize your code. It is designed to detect errors that actually break
+          your code while skipping things that, according to Crockford, &ldquo;are known to
+          contribute mistakes in projects&rdquo;. In other words, JSHint is a fork of JSLint for
+          the real world where people use different styles and conventions.</p>
+
+          <p>The most important part is that <a href="http://github.com/jshint/jshint/">JSHint
+          is developed and supported</a> by the JavaScript developers community and not by one
+          very opinionated person.</p>
+        </article>
+
+        <article class="last">
+          <h2>Environments</h2>
+
+          <p>You can also let JSHint know when your code is running in a specific environment.
+          This will help it to recognize specific pre-defined global variables.</p>
+
+          <p>Currently supported environments:</p>
+
+          <ul>
+            <li>Browser (browser)</li>
+            <li><a href="http://en.wikipedia.org/wiki/ECMAScript#ECMAScript.2C_5th_Edition">ES5</a> (es5)</li>
+            <li><a href="http://nodejs.org/">Node.js</a> (node)</li>
+            <li><a href="http://www.mozilla.org/rhino/">Rhino</a> (rhino)</li>
+          </ul>
+        </article>
+      </div>
+
+      <h1>Options</h1>
+
+      <div>
+        <article>
           <h2>bitwise</h2>
 
-          <p></p>
+          <p>If true, JSHint will prohibit the use of bitwise operators.</p>
+
+          <p>JavaScript supports bitwise operators but it does not have an integer type.
+          The bitwise operators convert their operands from floating-point to integers and
+          back and they are not as efficient as they are in other languages.</p>
         </article>
 
         <article>
@@ -234,7 +276,16 @@
         <article>
           <h2>evil</h2>
 
-          <p></p>
+          <p>If true, JSHint will allow the use of <code>eval</code>.</p>
+
+          <p>The <code>eval</code> function provides access to the JavaScript compiler.
+          It is sometimes useful but more often its use will open up your code for injection
+          attacks and make debugging more difficult. It is probably a good idea to never use it
+          unless you know what you are doing.</p>
+
+          <p>Note, that the <code>Function</code> constructor is another form of
+          <code>eval</code>. Also, when given string arguments (as opposed to function),
+          <code>setTimeout</code> and <code>setInterval</code> will act as <code>eval</code>.</p>
         </article>
 
         <article>
@@ -320,29 +371,17 @@
         <article>
           <h2>strict</h2>
 
-          <p></p>
+          <p>If true, JSHint will require you to use <code>"use strict";</code> pragma.</p>
+
+          <p>Strict Mode is a new feature in ECMAScript 5 that allows you to place a program, or a function, in a "strict" operating context. This strict context prevents certain actions from being taken and throws more exceptions. For more information, see
+          <a href="http://ejohn.org/blog/ecmascript-5-strict-mode-json-and-more/">ECMAScript 5 Strict Mode, JSON, and More</a> by John Resig.</p>
         </article>
 
-        <article>
+        <article class="last">
           <h2>white</h2>
 
           <p></p>
         </article>
-
-        <article class="last">
-          <h2>Environments</h2>
-
-          <p>You can also let JSHint know when your code is running in a specific environment.
-          This will help it to recognize specific pre-defined global variables.</p>
-
-          <p>Currently supported environments:</p>
-
-          <ul>
-            <li>Browser (browser)</li>
-            <li><a href="http://en.wikipedia.org/wiki/ECMAScript#ECMAScript.2C_5th_Edition">ES5</a> (es5)</li>
-            <li><a href="http://nodejs.org/">Node.js</a> (node)</li>
-            <li><a href="http://www.mozilla.org/rhino/">Rhino</a> (rhino)</li>
-          </ul>
       </div>
     </section>
 

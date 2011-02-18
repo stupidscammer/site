@@ -344,7 +344,11 @@ section#docs article p {
   font-size: 100%;
 }
 
-section#docs article p code {
+section#docs article pre {
+  margin-bottom: 10px;
+}
+
+section#docs article code {
   border-radius: 2px;
   background: hsla(100, 99%, 99%, 0.5);
   padding: 0.1em 0.4em;

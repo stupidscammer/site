@@ -179,7 +179,7 @@ a.button {
   font-size: 120%;
   background-color: #262626;
   background-image: -moz-linear-gradient(90deg, #000, #444);
-  background-image: -webkit-gradient(linear, 0 0, 0% 100%, from(#000), to(#444));  
+  background-image: -webkit-gradient(linear, 0 0, 0% 100%, from(#000), to(#444));
   background-image: -o-linear-gradient(90deg, #000, #444);
   background-image: linear-gradient(90deg, #000, #444);
   color: #f6f6f6;
@@ -194,8 +194,8 @@ div.code button:hover,
 a.button:hover {
   background-color: #000;
   background-image: -moz-linear-gradient(90deg, #444, #000);
-  background-image: -webkit-gradient(linear, 0 0, 0% 100%, from(#444), to(#000));  
-  background-image: -o-linear-gradient(90deg, #444, #000);  
+  background-image: -webkit-gradient(linear, 0 0, 0% 100%, from(#444), to(#000));
+  background-image: -o-linear-gradient(90deg, #444, #000);
   background-image: linear-gradient(90deg, #444, #000);
 
 }

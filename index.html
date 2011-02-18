@@ -58,97 +58,102 @@
         </nav>
 
         <div class="options wrapper">
-          <div class="option">
-            <input type="checkbox" name="bitwise" id="option_bitwise">
-            <label for="option_bitwise">Disallow bitwise operators</label>
-          </div>
+          <form>
+            <div class="option">
+              <input type="checkbox" name="bitwise" id="option_bitwise">
+              <label for="option_bitwise">Disallow bitwise operators</label>
+            </div>
 
-          <div class="option">
-            <input type="checkbox" name="boss" id="option_boss">
-            <label for="option_boss">Allow assignments inside if/for/while/do</label>
-          </div>
+            <div class="option">
+              <input type="checkbox" name="boss" id="option_boss">
+              <label for="option_boss">Allow assignments inside if/for/while/do</label>
+            </div>
 
-          <div class="option">
-            <input type="checkbox" name="curly" id="option_curly">
-            <label for="option_curly">Require curly braces around <strong>all</strong> blocks</label>
-          </div>
+            <div class="option">
+              <input type="checkbox" name="curly" id="option_curly">
+              <label for="option_curly">Require curly braces around <strong>all</strong> blocks</label>
+            </div>
 
-          <div class="option">
-            <input type="checkbox" name="debug" id="option_debug" checked>
-            <label for="option_debug">Allow debugger statements</label>
-          </div>
+            <div class="option">
+              <input type="checkbox" name="debug" id="option_debug" checked>
+              <label for="option_debug">Allow debugger statements</label>
+            </div>
 
-          <div class="option">
-            <input type="checkbox" name="devel" id="option_devel" checked>
-            <label for="option_devel">Allow logging statements</label>
-          </div>
+            <div class="option">
+              <input type="checkbox" name="devel" id="option_devel" checked>
+              <label for="option_devel">Allow logging statements</label>
+            </div>
 
-          <div class="option">
-            <input type="checkbox" name="eqeqeq" id="option_eqeqeq">
-            <label for="option_eqeqeq">Require ===</label>
-          </div>
+            <div class="option">
+              <input type="checkbox" name="eqeqeq" id="option_eqeqeq">
+              <label for="option_eqeqeq">Require ===</label>
+            </div>
 
-          <div class="option">
-            <input type="checkbox" name="evil" id="option_evil">
-            <label for="option_evil">Tolerate eval</label>
-          </div>
+            <div class="option">
+              <input type="checkbox" name="evil" id="option_evil">
+              <label for="option_evil">Tolerate eval</label>
+            </div>
 
-          <div class="option">
-            <input type="checkbox" name="forin" id="option_forin" checked>
-            <label for="option_forin">Require for..in statements to be filtered</label>
-          </div>
+            <div class="option">
+              <input type="checkbox" name="forin" id="option_forin" checked>
+              <label for="option_forin">Require for..in statements to be filtered</label>
+            </div>
 
-          <div class="option">
-            <input type="checkbox" name="laxbreak" id="option_laxbreak">
-            <label for="option_laxbreak">Don't check line breaks</label>
-          </div>
+            <div class="option">
+              <input type="checkbox" name="laxbreak" id="option_laxbreak">
+              <label for="option_laxbreak">Don't check line breaks</label>
+            </div>
 
-          <div class="option">
-            <input type="checkbox" name="passfail" id="option_passfail">
-            <label for="option_passfail">Stop on the first error</label>
-          </div>
+            <div class="option">
+              <input type="checkbox" name="passfail" id="option_passfail">
+              <label for="option_passfail">Stop on the first error</label>
+            </div>
 
-          <div class="option">
-            <input type="checkbox" name="undef" id="option_undef" checked>
-            <label for="option_undef">Require variables to be declared before usage</label>
-          </div>
+            <div class="option">
+              <input type="checkbox" name="undef" id="option_undef" checked>
+              <label for="option_undef">Require variables to be declared before usage</label>
+            </div>
 
-          <div class="option">
-            <input type="checkbox" name="white" id="option_white">
-            <label for="option_white">Apply strict whitespace rules</label>
-          </div>
+            <div class="option">
+              <input type="checkbox" name="white" id="option_white">
+              <label for="option_white">Apply strict whitespace rules</label>
+            </div>
 
-          <h4>Environment:</h4>
-          <div class="option">
-            <input type="checkbox" name="browser" id="option_browser" checked>
-            <label for="option_browser">Browser</label>
-          </div>
+            <h4>Environment:</h4>
+            <div class="option">
+              <input type="checkbox" name="browser" id="option_browser" checked>
+              <label for="option_browser">Browser</label>
+            </div>
 
-          <div class="option">
-            <input type="checkbox" name="es5" id="option_es5">
-            <label for="option_es5">ES5</label>
-          </div>
+            <div class="option">
+              <input type="checkbox" name="es5" id="option_es5">
+              <label for="option_es5">ES5</label>
+            </div>
 
-          <div class="option">
-            <input type="checkbox" name="node" id="option_node">
-            <label for="option_node">Node.js</label>
-          </div>
+            <div class="option">
+              <input type="checkbox" name="node" id="option_node">
+              <label for="option_node">Node.js</label>
+            </div>
 
-          <div class="option">
-            <input type="checkbox" name="rhino" id="option_rhino">
-            <label for="option_rhino">Rhino</label>
-          </div>
+            <div class="option">
+              <input type="checkbox" name="rhino" id="option_rhino">
+              <label for="option_rhino">Rhino</label>
+            </div>
 
-          <div class="option">
-            <input type="checkbox" name="widget" id="option_widget">
-            <label for="option_widget">Yahoo! Widget</label>
-          </div>
-          <p>Want an option for something else? <a href="https://github.com/jshint/jshint/issues">File a ticket</a></p>
+            <div class="option">
+              <input type="checkbox" name="widget" id="option_widget">
+              <label for="option_widget">Yahoo! Widget</label>
+            </div>
+          
+            <p>Want an option for something else? <a href="https://github.com/jshint/jshint/issues">File a ticket</a></p>
+          
+          </form>
         </div>
 
         <div class="output wrapper hidden">
           <p>Enter your code into the textarea on the left and press JSHint.</p>
         </div>
+      
       </div>
     </section>
 

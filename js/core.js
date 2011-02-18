@@ -14,6 +14,7 @@ $(document).ready(function () {
 
         output.removeClass("pass");
         output.addClass("fail");
+
         output.html(template.tmpl(JSHINT.data()));
     }
 
@@ -76,13 +77,13 @@ $(document).ready(function () {
     if (hasLocalStorage()){
         var prefs = localStorage.getItem('prefs');
         $("form").unserializeForm(prefs);
-        
+
         $('div.option input').change(function(){
             prefs = $(this).closest('form').serialize();
             localStorage.setItem('prefs',prefs);
         });
     }
-    
+
 });
 
 
@@ -93,11 +94,11 @@ $(document).ready(function () {
 (function($) {
     // takes a GET-serialized string, e.g. first=5&second=3&a=b and sets input tags (e.g. input name="first") to their values (e.g. 5)
     $.fn.unserializeForm = function(values) {
-        
+
         if (!values){
             return this;
         }
-        
+
         values = values.split("&");
 
         var serialized_values = [];

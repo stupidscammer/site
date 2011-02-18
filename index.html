@@ -464,10 +464,12 @@
 
         <ul>
         {{each(i, error) errors}}
-          <li>
-            <p><strong>Line ${error.line}</strong><code>${error.evidence}</code></p>
-            <p>${error.reason}</p>
-          </li>
+          {{if error}}
+            <li>
+              <p><strong>Line ${error.line}</strong><code>${error.evidence}</code></p>
+              <p>${error.reason}</p>
+            </li>
+          {{/if}}
         {{/each}}
         </ul>
       {{/if}}

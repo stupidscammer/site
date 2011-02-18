@@ -36,13 +36,13 @@
     </header>
 
     <article>
-      <p>JSHint is a tool to analyze JavaScript programs and detect various errors.
-      It works by parsing the source code, not running it, so it can assume different
+      <p>JSHint is a tool that analyzes JavaScript programs and detects various errors.
+      It works by parsing the source code, not running it, so it can emulate different
       execution environments. JSHint is very flexible so you can easily adjust it to
       your project's coding conventions.</p>
 
       <p>JSHint is an open-source project that is supported and maintained by the
-      JavaScript developers community. The source code is available on <a href="http://github.com/jshint/jshint/">GitHub</a>.</p>
+      JavaScript developer community. The source code is available on <a href="http://github.com/jshint/jshint/">GitHub</a>.</p>
     </article>
 
     <section id="applyarea">
@@ -148,7 +148,7 @@
             <input type="checkbox" name="widget" id="option_widget">
             <label for="option_widget">Yahoo! Widget</label>
           </div>
-          <p>Want an option for something else? <a href="https://github.com/jshint/site/issues">File a ticket</a></p>
+          <p>Want an option for something else? <a href="https://github.com/jshint/site/issues">Create a ticket</a></p>
         </div>
 
         <div class="output wrapper hidden">
@@ -171,23 +171,23 @@
           <p>The first parameter is either a string or an array of strings.
           If it is a string, it will be split on '\n' or '\r'. If it is an
           array of strings, it is assumed that each string represents one line.
-          The source can be a JavaScript or a JSON text.</p>
+          The source can be JavaScript or JSON.</p>
 
-          <p>If it checks out, JSHINT returns true. Otherwise, it returns false.</p>
+          <p>If all of the enabled tests pass, JSHINT returns true. Otherwise, it returns false.</p>
 
-          <p>If false, you can inspect JSHINT.errors to find out problems or request a
-          complete data structure using JSHINT.data(). For more information, read JSHint
-          source code (it has useful comments).</p>
+          <p>If false, you can use JSHINT.errors to retrieve the errors or request a
+          complete data structure representing the "lint" by using JSHINT.data(). For
+          more information, read the JSHint source code (it's well documented).</p>
 
-          <p>You can also set options in-file.</p>
+          <p>You can also set options in-file,</p>
 
-          <p><code>/*jshint evil: true, boss: true */</code></p>
+          <p><code>/* jshint evil: true, boss: true */</code></p>
 
-          <p>And let JSHint know what global variables it should expect.</p>
+          <p>And let JSHint know what global variables it should expect,</p>
 
-          <p><code>/*global DISQUS: true, jQuery: false */</code></p>
+          <p><code>/* global DISQUS: true, jQuery: false */</code></p>
 
-          <p>Above, JSHint will allow you to override DISQUS but complain if you try to
+          <p>In the example above, JSHint will allow you to override DISQUS, but complain if you try to
           override jQuery.</p>
         </article>
 
@@ -197,11 +197,11 @@
           <p>JSHint is a fork of Douglas Crockford's <a href="http://jslint.com/">JSLint</a>
           that does not tyrannize your code. It is designed to detect errors that actually break
           your code while skipping things that, according to Crockford, &ldquo;are known to
-          contribute mistakes in projects&rdquo;. In other words, JSHint is a fork of JSLint for
+          contribute mistakes in projects.&rdquo; In other words, JSHint is a fork of JSLint for
           the real world where people use different styles and conventions.</p>
 
-          <p>The most important part is that <a href="http://github.com/jshint/jshint/">JSHint
-          is developed and supported</a> by the JavaScript developers community and not by one
+          <p>The most important difference is that <a href="http://github.com/jshint/jshint/">JSHint
+          is developed and supported</a> by the JavaScript developer community and not by one
           very opinionated person.</p>
         </article>
 
@@ -209,7 +209,7 @@
           <h2>Environments</h2>
 
           <p>You can also let JSHint know when your code is running in a specific environment.
-          This will help it to recognize specific pre-defined global variables.</p>
+          This will help it recognize specific pre-defined global variables.</p>
 
           <p>Currently supported environments:</p>
 
@@ -232,7 +232,7 @@
 
           <p>JavaScript supports bitwise operators but it does not have an integer type.
           The bitwise operators convert their operands from floating-point to integers and
-          back and they are not as efficient as they are in other languages.</p>
+          back, therefore they may not be as efficient as they are in other languages.</p>
         </article>
 
         <article>
@@ -242,17 +242,18 @@
           such as <code>if</code>, <code>for</code> and <code>while</code>.</p>
 
           <p>More often than not, you want to compare values inside loops or conditional
-          statements and using assignment (<code>=</code> vs. <code>==</code>) is a typo.
-          By default, JSHint assumes that it is a typo but this option makes it look away.
-          So you can use assignment operator like a boss.</p>
+          statements and doing an assignment (<code>=</code> vs. <code>==</code>) is a typo.
+          By default, JSHint assumes that it is a typo, but enabling this option will ignore it
+          so you can use the assignment operator like a boss.</p>
         </article>
 
         <article>
           <h2>curly</h2>
 
-          <p>If true, JSHint will require you to always use blocks with structured elements such as <code>if</code> and <code>while</code>.</p>
+          <p>If true, JSHint will require that you always use blocks with structured elements such
+          as <code>if</code> and <code>while</code>.</p>
 
-          <p>JavaScript allows you to omit curly braces when body of a loop or <code>if</code>
+          <p>JavaScript allows you to omit curly braces when the body of a loop or <code>if</code>
           statement consists of a single statement. This might make your code look more
           confusing so there is an option to always require curly braces.</p>
         </article>
@@ -260,24 +261,28 @@
         <article>
           <h2>debug</h2>
 
-          <p>If true, JSHint will allow usage of <code>debugger</code> statements. This statement is used to set a breakpoint in modern browsers.</p>
+          <p>If true, JSHint will allow the usage of <code>debugger</code> statements, which are
+          used to set breakpoints in modern browsers.</p>
 
-          <p>It is a good idea to not to ship your code with <code>debugger</code> statements in it.
+          <p>It is probably a good idea to remove <code>debugger</code> statements before you ship
+          your code.
         </article>
 
         <article>
           <h2>devel</h2>
 
-          <p>If true, JSHint will allow usage of logging functions such as <code>console.log</code> and <code>alert</code>.</p>
+          <p>If true, JSHint will allow the usage of logging functions such as <code>console.log</code>
+          and <code>alert</code>.</p>
 
-          <p>Using <code>console.log</code> in the production code can
-          be a bad idea if you expect it to be run in the Internet Explorer. IE does not support this function and fires an exception when you try to use it.</p>
+          <p>Using <code>console.log</code> in production code can be a bad idea if you expect it to be
+          run in some user agents. For example, Internet Explorer does not support this function and
+          fires an exception when you try to use it.</p>
         </article>
 
         <article>
           <h2>eqeqeq</h2>
 
-          <p>If true, JSHint will require you to use <code>===</code> and <code>!==</code> for all comparisons.</p>
+          <p>If true, JSHint will require that you use <code>===</code> and <code>!==</code> for all comparisons.</p>
 
           <p>The <code>==</code> and <code>!=</code> operations do type coercion before comparing. Unless you know what are you
           doing, you should always use <code>===</code> or <code>!===</code> when comparing to 0, '', undefined, null, false or true.</p>
@@ -293,7 +298,7 @@
           attacks and make debugging more difficult. It is probably a good idea to never use it
           unless you know what you are doing.</p>
 
-          <p>Note, that the <code>Function</code> constructor is another form of
+          <p>Note that the <code>Function</code> constructor is another form of
           <code>eval</code>. Also, when given string arguments (as opposed to function),
           <code>setTimeout</code> and <code>setInterval</code> will act as <code>eval</code>.
           </p>
@@ -302,9 +307,9 @@
         <article>
           <h2>forin</h2>
 
-          <p>If true, JSHint will disallow usage of <code>for in</code> without <code>hasOwnProperty</code>.</p>
+          <p>If true, JSHint will disallow the usage of <code>for in</code> without <code>hasOwnProperty</code>.</p>
 
-          <p>The <code>for in</code> statement is used to loop through the names of properties of an object, including those inherited through the prototype chain. Method <code>hasOwnPropery</code> is used to check if property belongs to an object or was inherited through the prototype chain.</p>
+          <p>The <code>for in</code> statement is used to loop through the names of properties of an object, including those inherited through the prototype chain. The method <code>hasOwnPropery</code> is used to check if the property belongs to an object or was inherited through the prototype chain.</p>
         </article>
 
         <article>
@@ -318,19 +323,19 @@
 
           <p>If true, JSHint will not check line breaks.</p>
 
-          <p>Automatic semicolon insertion in JavaScript can mask some seriours errors so
+          <p>Automatic semicolon insertion in JavaScript can mask some seriours errors, so
           this option checks your code for potentional unsafe line breaks.</p>
         </article>
 
         <article>
           <h2>newcap</h2>
 
-          <p>If true, JSHint will require you to capitalize all constructor functions.</p>
+          <p>If true, JSHint will require that you capitalize all constructor functions.</p>
 
           <p>Constructors are functions that are designed to be used with the <code>new</code>
-          prefix. The prefix creates a new object and binds it to the implied <code>this</code>
-          parameter. Constructor executed without <code>new</code> will have its
-          <code>this</code> assigned to a global object which is a mistake.</p>
+          statement. <code>new</code> creates a new object and binds it to the implied <code>this</code>
+          parameter. A constructor executed without <code>new</code> will have its
+          <code>this</code> assigned to a global object, leading to errors.</p>
 
           <p>Unfortunately, JavaScript gives us absolutely no way of telling if a function is a
           constructor. There is a convention to capitalize all constructor names to prevent
@@ -344,8 +349,8 @@
           arguments.callee</code>.</p>
 
           <p>The <code>arguments</code> object is an array-like structure with an indexed
-          property for each passed arguments. Property <code>arguments.callee</code> references
-          the currently invoking function (it is disallowed in the ES5 strict mode). Property
+          property for each passed argument. <code>arguments.callee</code> references
+          the currently invoking function (it is disallowed in the ES5 strict mode). 
           <code>arguments.caller</code> references the function (if any) from which the current
           function was invoked. It is not supported in all JavaScript implementations.</p>
         </article>
@@ -365,12 +370,12 @@
           <p>If true, JSLint will prohibit the use of constructors for side-effects.</p>
 
           <p>Originally, JSLint actively prohibited the use of constructors for side-effects.
-          So, the perfectly fine code shown below would not pass the check (note that we don't
+          So the perfectly fine code shown below would not pass the check (note that we don't
           assign the result of this expression to any variable):</p>
 
           <p><code>new UIWindow();</code></p>
 
-          <p>Since people use that in their projects and it works just fine, we made the
+          <p>Since people use the abive in their projects without error we made the
           prohibition an opt-in option.</p>
         </article>
 
@@ -396,7 +401,7 @@
         <article>
           <h2>passfail</h2>
 
-          <p>If true, JSHint will stop on first error.</p>
+          <p>If true, JSHint will stop on the first error it encounters.</p>
         </article>
 
         <article>
@@ -420,12 +425,12 @@
         <article>
           <h2>undef</h2>
 
-          <p>If true, JSHint will require all non-global variables to be declared before
+          <p>If true, JSHint will require all non-global variables be declared before they are 
           used.</p>
 
           <p>If you don't explicitly declare a variable in local scope with <code>var</code>,
           JavaScript will put it in a global scope. This is usually a mistake. This option
-          checks that all variables are defined before used.</p>
+          checks that all variables are defined before they are used.</p>
         </article>
 
         <article>

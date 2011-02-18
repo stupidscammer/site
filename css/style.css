@@ -108,6 +108,7 @@ a, a:active, a:visited, a:hover {
 
 header {
   background-color: #262626;
+  height: 110px;
 }
 
 header h1 {

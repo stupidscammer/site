@@ -130,8 +130,18 @@
             </div>
 
             <div class="option">
+              <input type="checkbox" name="couch" id="option_couch" checked>
+              <label for="option_couch">CouchDB</label>
+            </div>
+
+            <div class="option">
               <input type="checkbox" name="es5" id="option_es5">
               <label for="option_es5">ES5</label>
+            </div>
+
+            <div class="option">
+              <input type="checkbox" name="jquery" id="option_jquery" checked>
+              <label for="option_jquery">jQuery</label>
             </div>
 
             <div class="option">
@@ -230,6 +240,14 @@
 
       <div>
         <article>
+          <h2>asi</h2>
+
+          <p>If true, JSHint will tolerate the use of automatic semicolon insertion.</p>
+
+          <p>Automatic semicolon insertion is one of JavaScript's most controversial syntactic features. By default, JSHint requires you to use semicolons at the end of every statement but if you understand ASI and want to use them only when strictly required, this option is for you.</p>
+        </article>
+
+        <article>
           <h2>bitwise</h2>
 
           <p>If true, JSHint will prohibit the use of bitwise operators.</p>
@@ -242,13 +260,15 @@
         <article>
           <h2>boss</h2>
 
-          <p>If true, JSHint will allow the use of assignments inside structured elements
+          <p>If true, JSHint will allow the use of advanced (and potentially unsafe) techniques like <code>== null</code> or assignments inside structured elements
           such as <code>if</code>, <code>for</code> and <code>while</code>.</p>
 
           <p>More often than not, you want to compare values inside loops or conditional
           statements and doing an assignment (<code>=</code> vs. <code>==</code>) is a typo.
           By default, JSHint assumes that it is a typo, but enabling this option will ignore it
           so you can use the assignment operator like a boss.</p>
+
+          <p>As for <code>== null</code> it is usually used to check if something is undefined or null (that works because both null and undefined coerce to false when using ==).</p>
         </article>
 
         <article>

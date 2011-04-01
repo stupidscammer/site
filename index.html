@@ -88,11 +88,6 @@
             </div>
 
             <div class="option">
-              <input type="checkbox" name="devel" id="option_devel" checked>
-              <label for="option_devel">Allow logging statements</label>
-            </div>
-
-            <div class="option">
               <input type="checkbox" name="eqeqeq" id="option_eqeqeq">
               <label for="option_eqeqeq">Require ===</label>
             </div>
@@ -161,6 +156,11 @@
             <div class="option">
               <input type="checkbox" name="widget" id="option_widget">
               <label for="option_widget">Yahoo! Widget</label>
+            </div>
+
+            <div class="option">
+              <input type="checkbox" name="devel" id="option_devel" checked>
+              <label for="option_devel">Development (console, etc.)</label>
             </div>
             <p>Want an option for something else? <a href="https://github.com/jshint/jshint/issues">Create a ticket</a></p>
           </form>
@@ -233,6 +233,7 @@
 
           <ul>
             <li>Browser (browser)</li>
+            <li>Development: console, alert, etc. (devel)</li>
             <li><a href="http://jquery.com/">jQuery</a> (jquery)</li>
             <li><a href="http://couchdb.apache.org/">CouchDB</a> (couch)</li>
             <li><a href="http://en.wikipedia.org/wiki/ECMAScript#ECMAScript.2C_5th_Edition">ES5</a> (es5)</li>
@@ -297,17 +298,6 @@
 
           <p>It is probably a good idea to remove <code>debugger</code> statements before you ship
           your code.
-        </article>
-
-        <article>
-          <h2>devel</h2>
-
-          <p>If true, JSHint will allow the usage of logging functions such as <code>console.log</code>
-          and <code>alert</code>.</p>
-
-          <p>Using <code>console.log</code> in production code can be a bad idea if you expect it to be
-          run in some user agents. For example, Internet Explorer does not support this function and
-          fires an exception when you try to use it.</p>
         </article>
 
         <article>

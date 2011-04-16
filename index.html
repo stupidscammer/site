@@ -99,7 +99,7 @@
 
             <div class="option">
               <input type="checkbox" name="forin" id="option_forin" checked>
-              <label for="option_forin">Require for..in statements to be filtered</label>
+              <label for="option_forin">Allow the use for..in statements without filtering</label>
             </div>
 
             <div class="option">
@@ -328,7 +328,7 @@
         <article>
           <h2>forin</h2>
 
-          <p>If true, JSHint will disallow the usage of <code>for in</code> without <code>hasOwnProperty</code>.</p>
+          <p>If true, JSHint will allow the use of <code>for in</code> without <code>hasOwnProperty</code>.</p>
 
           <p>The <code>for in</code> statement is used to loop through the names of properties of an object, including those inherited through the prototype chain. The method <code>hasOwnPropery</code> is used to check if the property belongs to an object or was inherited through the prototype chain.</p>
         </article>

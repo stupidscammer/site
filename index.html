@@ -154,11 +154,6 @@
             </div>
 
             <div class="option">
-              <input type="checkbox" name="widget" id="option_widget">
-              <label for="option_widget">Yahoo! Widget</label>
-            </div>
-
-            <div class="option">
               <input type="checkbox" name="devel" id="option_devel" checked>
               <label for="option_devel">Development (console, etc.)</label>
             </div>
@@ -239,7 +234,8 @@
             <li><a href="http://en.wikipedia.org/wiki/ECMAScript#ECMAScript.2C_5th_Edition">ES5</a> (es5)</li>
             <li><a href="http://nodejs.org/">Node.js</a> (node)</li>
             <li><a href="http://www.mozilla.org/rhino/">Rhino</a> (rhino)</li>
-            <li><a href="http://widgets.yahoo.com/">Yahoo! Widget</a> (widget)</li>
+            <li><a href="http://prototypejs.org/">Prototype.js</a> (prototypejs)</li>
+            <li><a href="http://mootools.net/">MooTools</a> (mootools)</li>
           </ul>
         </article>
       </div>
@@ -268,15 +264,13 @@
         <article>
           <h2>boss</h2>
 
-          <p>If true, JSHint will allow the use of advanced (and potentially unsafe) techniques like <code>== null</code> or assignments inside structured elements
+          <p>If true, JSHint will allow the use of assignments inside structured elements
           such as <code>if</code>, <code>for</code> and <code>while</code>.</p>
 
           <p>More often than not, you want to compare values inside loops or conditional
           statements and doing an assignment (<code>=</code> vs. <code>==</code>) is a typo.
           By default, JSHint assumes that it is a typo, but enabling this option will ignore it
           so you can use the assignment operator like a boss.</p>
-
-          <p>As for <code>== null</code> it is usually used to check if something is undefined or null (that works because both null and undefined coerce to false when using ==).</p>
         </article>
 
         <article>
@@ -307,6 +301,14 @@
 
           <p>The <code>==</code> and <code>!=</code> operations do type coercion before comparing. Unless you know what are you
           doing, you should always use <code>===</code> or <code>!==</code> when comparing to 0, '', undefined, null, false or true.</p>
+        </article>
+
+        <article>
+          <h2>eqnull</h2>
+
+          <p>If true, JSHint will allow the use of <code>== null</code>.</p>
+
+          <p><code>== null</code> is usually used to check if something is undefined or null (that works because both null and undefined coerce to false when using ==).</p>
         </article>
 
         <article>

@@ -1,0 +1,59 @@
+$width: 940px;
+@mixin editor {
+  background-color: #fff;
+  border-radius: 3px;
+  border: solid 1px #999;
+}
+
+body {
+  font-size: 10pt;
+  font-family: "PT Sans", Helvetica, Arial, Sans-Serif;
+  color: #444;
+  background-color: #E3E9ED;
+}
+
+a {
+  color: #4183C4;
+}
+
+.topbar h3 {
+  font-family: "Droid Sans", Helvetica, Arial, Sans-Serif;
+  font-size: 120%;
+  color: #fff;
+}
+
+body > #about {
+  margin: 0px auto;
+  padding-top: 80px;
+  width: $width;
+}
+
+body > #about p.hide {
+  font-size: 100%;
+  text-align: right;
+  margin-bottom: 0;
+}
+
+body > #editor > .container {
+  padding-top: 40px;
+}
+
+.editorArea form > input {
+  margin-left: 10px;
+  width: 50px;
+}
+
+.editorArea > .row .buttons {
+  text-align: right;
+}
+
+.editorArea .CodeMirror {
+  @include editor;
+}
+
+div.footer {
+  margin: 0 auto;
+  padding: 50px 0 25px 0;
+  width: $width;
+  text-align: center;
+}

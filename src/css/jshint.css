@@ -13,6 +13,11 @@ a {
   color: #4183C4;
 }
 
+pre, code {
+  font-family: "Inconsolata";
+  font-size: 10pt;
+}
+
 .topbar h3 {
   font-family: "Droid Sans", Helvetica, Arial, Sans-Serif;
   font-size: 120%;

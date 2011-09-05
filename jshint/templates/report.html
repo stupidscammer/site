@@ -2,12 +2,75 @@
 
 <html lang="en">
   <head>
-    <script>
-      var Data = {Data};
-    </script>
+    <title>JSHint Report</title>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="description" content="JSHint Report. JSHint is a JavaScript Code Quality Tool">
+    <meta name="author" content="Anton Kovalyov">
+    <meta name="author" content="JSHint Community">
+
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Droid+Sans:regular,bold|Inconsolata|PT+Sans:400,700">
+    <link rel="stylesheet" href="/src/css/codemirror.css">
+    <link rel="stylesheet" href="/src/css/codemirror-theme.css">
+    <link rel="stylesheet" href="/src/css/bootstrap.css">
+    <link rel="stylesheet" href="/src/css/page.css">
+
+    <script src="/src/js/ender.js"></script>
+    <script src="/src/js/codemirror.js"></script>
+    <script src="/src/js/javascript.js"></script>
+    <script src="/src/js/jshint.js"></script>
+    <script src="/src/js/report.js"></script>
   </head>
 
   <body>
-    <pre>{Code|html}</pre>
+    <div class="topbar-wrapper navigation">
+      <div class="topbar">
+        <div class="fill">
+          <div class="container">
+            <h3><a href="/">JSHint</a></h3>
+
+            <ul>
+              <li><a href="/about/">About</a></li>
+              <li><a href="/install/">Install</a></li>
+              <li><a href="/plugins/">Plugins</a></li>
+              <li><a href="/docs/">Documentation</a></li>
+              <li><a href="https://github.com/jshint/jshint/">Source</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container options">
+      <h3>Saved JSHint Report:</h3>
+      <pre>{Opts|html}</pre>
+    </div>
+
+    <div class="container code">
+      <div class="editorArea">
+        <textarea id="editor">{Code}</textarea>
+      </div>
+    </div>
+
+    <div class="container report">
+      <div class="alert-message block-message error">
+        <h4>JSHint has found potential problems in this code:</h4>
+
+        <ul class="jshint-errors"></ul>
+
+        <p>Feel like some warnings are incorrect? You can configure JSHint to turn off
+        some warnings. Read more in the <a href="/docs">documentation</a>.</p>
+      </div>
+    </div>
+
+    <div class="footer">
+      <p><strong>JSHint</strong>, by JSHint Community.</p>
+      <p>Follow us on
+        <a href="http://twitter.com/jshint">Twitter</a> or
+        <a href="https://github.com/jshint">GitHub</a>.
+        Maintained by <a href="http://anton.kovalyov.net/">Anton Kovalyov</a>.
+      </p>
+    </div>
   </body>
 </html>

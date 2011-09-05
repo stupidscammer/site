@@ -91,7 +91,7 @@ $.domReady(function () {
     button.html('Saving report...').attr('disabled', true);
 
     $('form.save-report textarea[name=code]').val(Editor.getValue());
-    $('form.save-report textarea[name=data]').val(JSON.stringify(JSHINT.data()));
+    listOptions($('form.save-report textarea[name=data]'), JSHINT.data().options);
     $('form.save-report')[0].submit();
   });
 

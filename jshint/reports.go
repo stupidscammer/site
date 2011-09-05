@@ -10,34 +10,38 @@ import (
 )
 
 type Snippet struct {
-    Code string
-    Data string
+    Code   string
+    Opts   string
     Date datastore.Time
 }
 
+const lenPath = len("/reports/")
+
 func init() {
     http.HandleFunc("/reports/save/", save)
-    http.HandleFunc("/reports/show/", show)
+    http.HandleFunc("/reports/", show)
 }
 
 func save(w http.ResponseWriter, r *http.Request) {
     c := appengine.NewContext(r)
 
     snippet := Snippet{
-        Code: r.FormValue("code"),
-        Data: r.FormValue("data"),
+        Code:   r.FormValue("code"),
+        Opts:   r.FormValue("data"),
         Date: datastore.SecondsToTime(time.Seconds()), // Now
     }
 
     key, _ := datastore.Put(c, datastore.NewIncompleteKey("snippet"), &snippet)
-    fmt.Fprintf(w, key.Encode())
+    w.Header().Set("Location", "/reports/" + key.Encode())
+    w.WriteHeader(http.StatusFound)
 }
 
 func show(w http.ResponseWriter, r *http.Request) {
     var snippet Snippet
     c := appengine.NewContext(r)
 
-    key, err := datastore.DecodeKey(r.FormValue("k"))
+    uid := r.URL.Path[lenPath:]
+    key, err := datastore.DecodeKey(uid)
     if err != nil {
         fmt.Fprintf(w, err.String())
     }

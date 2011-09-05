@@ -104,13 +104,19 @@ pre, code {
 
 div.report {
   margin-top: 20px;
+  word-wrap: break-word;
 }
 
 div.report div.alert-message div.rows {
   margin: 0;
 }
 
+div.report div.span10 {
+  width: 75%;
+}
+
 div.report div.span5 {
+  width: 20%;
   text-align: right;
 }
 

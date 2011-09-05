@@ -44,11 +44,6 @@
 
     <div class="container-fluid editor">
       <div class="sidebar">
-        <div class="alert-message info">
-          <strong>JSHint</strong> is a tool to detect errors and potential problems
-          in JavaScript code.
-        </div>
-
         <h3>Warn</h3>
 
         <ul class="inputs-list">
@@ -112,6 +107,20 @@
             <label>
               <input type="checkbox" name="evil" class="neg" checked>
               <span>About <code>eval</code></span>
+            </label>
+          </li>
+
+          <li>
+            <label>
+              <input type="checkbox" name="laxbreak" class="neg" checked>
+              <span>About unsafe line breaks</span>
+            </label>
+          </li>
+
+          <li>
+            <label>
+              <input type="checkbox" name="bitwise" checked>
+              <span>When bitwise operators are used</span>
             </label>
           </li>
 
@@ -188,42 +197,56 @@
 
       <div class="content">
         <div class="editorArea">
-          <textarea id="editor">// Your code goes here.</textarea>
-
           <div class="buttons">
-            <button data-action="lint" class="btn primary">Lint</button>
+            <table>
+              <tr>
+                <td class="message">
+                  <div class="alert-message error" style="display:none;">
+                    <p>JSHint has found potential problems in your code. See
+                    <a href="#report">detailed report</a>.</p>
+                  </div>
+
+                  <div class="alert-message success" style="display:none;">
+                    <p>Good job! JSHint hasn't found any problems with your code.</p>
+                  </div>
+
+                  <div class="alert-message info">
+                    <p><strong>JSHint</strong> is a tool to detect errors and potential problems
+                    in JavaScript code.</p>
+                  </div>
+                </td>
+
+                <td>
+                  <button data-action="lint" class="btn primary">Lint</button>
+                </td>
+              </tr>
+            </table>
           </div>
+          <textarea id="editor">// Your code goes here.</textarea>
         </div>
 
+        <a name="report"></a>
         <div class="report">
           <div class="alert-message block-message error" style="display:none;">
-            <div class="save">
-              <button data-action="save" class="btn small">Save this report</button>
+            <div class="row">
+              <div class="columns span10">
+                <h4>JSHint Report</h4>
+              </div>
+              <div class="columns span5">
+                <button data-action="save" class="btn small">Save this report</button>
+              </div>
             </div>
 
             <div class="options">
-              <strong>Options:</strong>
               <pre></pre>
             </div>
 
-            <h4>JSHint has found potential problems in your code:</h4>
+            <h4>Errors:</h4>
 
             <ul class="jshint-errors"></ul>
 
             <p>Feel like some warnings are incorrect? You can configure JSHint to turn off
             some warnings. Read more in the <a href="/docs">documentation</a>.</p>
-          </div>
-
-          <div class="alert-message block-message success" style="display:none;">
-            <div class="options">
-              <strong>Options:</strong>
-              <pre></pre>
-            </div>
-
-            <h4>JSHint hasn't found any problems with your code.</h4>
-
-            <p>Good job! If you want to be on the safe side, you can tune JSHint to be
-            more strict towards your code. Read more in the <a href="/docs">documentation</a>.</p>
           </div>
         </div>
       </div>
@@ -250,6 +273,8 @@
         onChange: function () {
           if (Editor.getValue() == '') {
             $('div.report > div.alert-message').hide();
+            $('div.buttons div.alert-message').hide();
+            $('div.buttons div.alert-message.info').show();
           }
         }
       });

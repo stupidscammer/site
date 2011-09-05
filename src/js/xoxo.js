@@ -51,16 +51,17 @@ $.domReady(function () {
         var str  = Editor.getLine(line);
 
         Editor.setSelection({ line: line, ch: 0 }, { line: line, ch: str.length });
+        scrollTo(0, 0);
       });
     }
 
     listOptions($('div.report > div.error > div.options pre'), report.options);
+    $('div.editorArea div.alert-message.error').show();
     $('div.report > div.error').show();
   }
 
   function reportSuccess(report) {
-    listOptions($('div.report > div.success > div.options pre'), report.options);
-    $('div.report > div.success').show();
+    $('div.editorArea div.alert-message.success').show();
   }
 
   $('button[data-action=lint]').bind('click', function () {
@@ -82,6 +83,7 @@ $.domReady(function () {
     }
 
     $('div.report > div.alert-message').hide();
+    $('div.editorArea div.alert-message').hide();
     $('div.report pre').html('');
     JSHINT(Editor.getValue(), opts) ? reportSuccess(JSHINT.data()) : reportFailure(JSHINT.data());
   });

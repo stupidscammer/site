@@ -56,5 +56,6 @@ $.domReady(function () {
       var str  = Editor.getLine(line);
 
       Editor.setSelection({ line: line, ch: 0 }, { line: line, ch: str.length });
+      scrollTo(0, 0);
   });
 });

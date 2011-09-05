@@ -31,10 +31,7 @@ pre, code {
 
 .editor .sidebar {
   width: 290px;
-}
-
-.editor .sidebar .alert-message {
-  margin-bottom: 10px;
+  padding-top: 50px;
 }
 
 .editor .sidebar p {
@@ -55,32 +52,70 @@ pre, code {
 }
 
 .editor {
-  padding-top: 60px;
+  padding-top: 50px;
 }
 
 .editorArea > .buttons {
   text-align: right;
 }
 
+.editorArea > .buttons .alert-message {
+  margin-bottom: 0;
+  padding: 5px 14px 6px;
+}
+
+.editorArea > .buttons .error a {
+  color: #fff;
+  border-bottom: dashed 1px #fff;
+}
+
+.editorArea > .buttons .error a:hover {
+  border-bottom: solid 1px #fff;
+  text-decoration: none;
+}
+
+.editorArea > .buttons table {
+  margin: 0;
+  border: 0;
+  padding: 0;
+  border-collapse: collapse;
+  font-size: 10pt;
+}
+
+.editorArea > .buttons table td {
+  text-align: right;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+.editorArea > .buttons table td.message {
+  text-align: left;
+  width: 100%;
+  padding-right: 10px;
+}
+
 .editorArea .CodeMirror {
   background-color: #fff;
   border-radius: 3px;
   border: solid 1px #999;
-  margin-bottom: 20px;
+  margin-top: 10px;
 }
 
 div.report {
   margin-top: 20px;
 }
 
-div.report div.save {
-  text-align: center;
+div.report div.alert-message div.rows {
+  margin: 0;
+}
+
+div.report div.span5 {
+  text-align: right;
 }
 
 div.report div.options {
-  padding-bottom: 5px;
-  margin-bottom: 15px;
-  border-bottom: solid 1px #aaa;
+  margin: 15px 0;
 }
 
 div.report ul.jshint-errors {

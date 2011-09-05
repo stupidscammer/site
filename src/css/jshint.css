@@ -1,44 +1,94 @@
+html, body {
+  height: 100%;
+  background-color: #E3E9ED;
+}
+
 body {
   font-size: 10pt;
   font-family: "PT Sans", Helvetica, Arial, Sans-Serif;
   color: #444;
-  background-color: #E3E9ED; }
+}
 
 a {
-  color: #4183C4; }
+  color: #4183C4;
+}
 
 .topbar h3 {
   font-family: "Droid Sans", Helvetica, Arial, Sans-Serif;
   font-size: 120%;
-  color: #fff; }
+  color: #fff;
+}
 
-body > #about {
-  margin: 0px auto;
-  padding-top: 80px;
-  width: 940px; }
+.navigation .container {
+  width: 100%;
+  padding: 0 20px;
+}
 
-body > #about p.hide {
-  font-size: 100%;
+.editor .sidebar {
+  width: 290px;
+}
+
+.editor .sidebar .alert-message {
+  margin-bottom: 10px;
+}
+
+.editor .sidebar p {
+  margin-top: 15px;
+}
+
+.editor .content {
+  margin-left: 310px;
+}
+
+.editor .sidebar ul.inputs-list li {
+  margin-bottom: 5px;
+}
+
+.editor .sidebar ul.inputs-list label span {
+  display: inline-block;
+  width: 270px;
+}
+
+.editor {
+  padding-top: 60px;
+}
+
+.editorArea > .buttons {
   text-align: right;
-  margin-bottom: 0; }
-
-body > #editor > .container {
-  padding-top: 40px; }
-
-.editorArea form > input {
-  margin-left: 10px;
-  width: 50px; }
-
-.editorArea > .row .buttons {
-  text-align: right; }
+}
 
 .editorArea .CodeMirror {
   background-color: #fff;
   border-radius: 3px;
-  border: solid 1px #999; }
+  border: solid 1px #999;
+  margin-bottom: 20px;
+}
+
+div.report {
+  margin-top: 20px;
+}
+
+div.report div.save {
+  text-align: center;
+}
+
+div.report div.options {
+  padding-bottom: 5px;
+  margin-bottom: 15px;
+  border-bottom: solid 1px #aaa;
+}
+
+div.report ul.jshint-errors {
+  margin: 15px;
+  list-style-type: none;
+}
+
+div.report ul.jshint-errors li {
+  margin-bottom: 15px;
+}
 
 div.footer {
   margin: 0 auto;
   padding: 50px 0 25px 0;
-  width: 940px;
-  text-align: center; }
+  text-align: center;
+}

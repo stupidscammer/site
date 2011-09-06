@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <title>About JSHint</title>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="description" content="JSHint is a JavaScript Code Quality Tool">
+    <meta name="author" content="Anton Kovalyov">
+    <meta name="author" content="JSHint Community">
+
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Droid+Sans:regular,bold|Inconsolata|PT+Sans:400,700">
+    <link rel="stylesheet" href="/src/css/bootstrap.css">
+    <link rel="stylesheet" href="/src/css/page.css">
+  </head>
+
+  <body>
+    <div class="topbar-wrapper navigation">
+      <div class="topbar">
+        <div class="fill">
+          <div class="container">
+            <h3><a href="/">JSHint</a></h3>
+
+            <ul>
+              <li class="active"><a href="/documentation/">Documentation</a></li>
+              <li><a href="/platforms/">Platforms</a></li>
+              <li><a href="https://github.com/jshint/node-jshint/">NodeJS Package</a></li>
+              <li><a href="https://github.com/jshint/jshint/">Source</a></li>
+              <li><a href="https://github.com/jshint/jshint/contributors">Contributors</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container page">
+      <div class="row">
+        <div class="span6 columns">
+          <h2>About <span class="logo">JSHint</span></h2>
+
+          <p>JSHint is a community-driven tool to detect errors and potential problems in JavaScript
+          code and to enforce your team's coding conventions.</p>
+          <p>It is very flexible so you can easily
+          adjust it to your particular coding guidelines and the environment you expect your code to
+          execute in.</p>
+        </div>
+
+        <div class="span5 columns">
+          <h2>History</h2>
+
+          <p>JSHint is a fork of <a href="http://jslint.com/">JSLint</a>, the tool written and
+          maintained by Douglas Crockford.</p>
+
+          <p>The project originally started as an effort to make
+          a more configurable linting tool&mdash;the one that doesn't enforce one particular coding
+          style on its users.</p>
+        </div>
+
+        <div class="span5 columns">
+          <h2>Our Goal</h2>
+
+          <p>Our goal is to help JavaScript developers write complex programs without
+          worrying about typos and language gotchas.</p>
+
+          <p>We believe that static code analysis programs&mdash;as well as other code quality
+          tools&mdash;are important and beneficial to the JavaScript community.</p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="span12 columns">
+          <h2>Why do we need static analysis tools?</h2>
+
+          <p>Any code base eventually becomes huge at some point, and simple mistakes&mdash;that
+          would not show themselves when written&mdash;can become show stoppers and waste hours of
+          debugging. And this is when static code analysis tools come into play and help developers
+          to spot such problems. JSHint scans a program written in JavaScript and reports about
+          commonly made mistakes and potential bugs. The potential problem could be a syntax error,
+          a bug due to implicit type conversion, a leaking variable or something else.</p>
+
+          <p>JSHint uses a <a href="http://en.wikipedia.org/wiki/Pratt_parser">Pratt parser</a>
+          implementation written by Douglas Crockford to scan your program.</p>
+
+          <p>Please note, that while static code analysis tools can spot many different kind of
+          mistakes, it can't detect if your program is correct, fast or has memory leaks. You should
+          also combine tools like JSHint with unit and functional tests as well as with code
+          reviews.</p>
+        </div>
+
+        <div class="span4 columns">
+          <h2>Links</h2>
+
+          <ul>
+            <li><a href="http://anton.kovalyov.net/slides/gothamjs/">Leveraging Code Quality
+            Tools</a>&mdash;presentation at the GothamJS '11 conference.</li>
+            <li><a href="http://www.youtube.com/watch?v=4zgYG-_ha28&feature=player_detailpage#t=54m00s">John Carmack on static code analysis tools</a>&mdash;QuakeCon '11 keynote.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="span12 columns">
+          <h2>How does it work?</h2>
+
+          <p><code>JSHINT</code> is a global function that takes three formal parameters:</p>
+
+          <pre>var result = JSHINT(source, options, globals);</pre>
+
+          <p>The first parameter is either a string or an array of strings. If it is a string,
+          it will be split on <code>'\n'</code> or <code>'\r'</code>. If it is an array of strings,
+          it is assumed that each string represents one line. The source can be JavaScript or
+          JSON.</p>
+
+          <p>If all of the enabled tests pass, JSHINT returns <code>true</code>. Otherwise, it
+          returns <code>false</code>.</p>
+
+          <p>If false, you can use <code>JSHINT.errors</code> to retrieve the errors or request a
+          complete data structure representing the "lint" by using <code>JSHINT.data()</code>. For
+          more information, read the JSHint source code (it's well documented).</p>
+
+          <p>You can also set options in-file globally or per-function:</p>
+
+          <pre>/*jshint evil:true, boss:true */
+
+function helloWorld() {
+  /*jshint expr:true */
+}</pre>
+
+          <p>In addition to options, you can let JSHint know what global variables it should
+          expect:</p>
+
+          <pre>/*global DISQUS:true, jQuery:false */</pre>
+
+          <p>In the example above, JSHint will allow you to override <code>DISQUS</code>, but
+          complain if you try to override <code>jQuery</code>.</p>
+        </div>
+
+        <div class="span4 columns">
+          <h2>Plugins</h2>
+
+          <p>Thanks to many contributors JSHint there are many plugins for all popular text editors
+          and JavaScript platforms including NodeJS, Rhino and so on. Read more on our
+          <a href="/platforms/">platforms</a> page.</p>
+        </div>
+      </div>
+
+      <div class="options-docs">
+        <h2>Enforcing Options</h2>
+
+        <table class="zebra-striped">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td>asi</td>
+              <td>If true, JSHint will tolerate the use of automatic semicolon insertion.
+
+  Automatic semicolon insertion is one of JavaScript's most controversial syntactic features. By default, JSHint requires you to use semicolons at the end of every statement but if you understand ASI and want to use them only when strictly required, this option is for you.</td>
+            </tr>
+
+            <tr>
+              <td>asi</td>
+              <td>If true, JSHint will tolerate the use of automatic semicolon insertion.
+
+  Automatic semicolon insertion is one of JavaScript's most controversial syntactic features. By default, JSHint requires you to use semicolons at the end of every statement but if you understand ASI and want to use them only when strictly required, this option is for you.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="footer">
+      <p><strong>JSHint</strong>, by JSHint Community.</p>
+      <p>Follow us on
+        <a href="http://twitter.com/jshint">Twitter</a> or
+        <a href="https://github.com/jshint">GitHub</a>.
+        Maintained by <a href="http://anton.kovalyov.net/">Anton Kovalyov</a>.
+      </p>
+    </div>
+  </body>
+</html>

@@ -18,6 +18,10 @@ pre, code {
   font-size: 10pt;
 }
 
+h1, h2, h3, h4 {
+  font-family: "Droid Sans", Helvetica, Arial, Sans-Serif;
+}
+
 .topbar h3 {
   font-family: "Droid Sans", Helvetica, Arial, Sans-Serif;
   font-size: 120%;
@@ -52,4 +56,39 @@ div.footer {
   margin: 0 auto;
   padding: 50px 0 25px 0;
   text-align: center;
+}
+
+div.page {
+  margin-top: 80px;
+}
+
+div.page h2 {
+  margin-bottom: 10px;
+}
+
+div.page div.row {
+  border-bottom: solid 1px #ddd;
+  padding-bottom: 40px;
+  margin-bottom: 40px;
+}
+
+div.page div.span4 ul {
+  margin: 0;
+  list-style-type: none;
+}
+
+div.page div.span4 ul li {
+  margin-bottom: 10px;
+}
+
+div.page div.title {
+  border: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+div.page div.options-docs table {
+  background-color: #fff;
+  border: solid 1px #ccc;
+  border-radius: 3px;
 }

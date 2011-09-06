@@ -10,8 +10,8 @@ import (
 )
 
 type Snippet struct {
-    Code   string
-    Opts   string
+    Code string
+    Opts string
     Date datastore.Time
 }
 
@@ -26,12 +26,15 @@ func save(w http.ResponseWriter, r *http.Request) {
     c := appengine.NewContext(r)
 
     snippet := Snippet{
-        Code:   r.FormValue("code"),
-        Opts:   r.FormValue("data"),
+        Code: r.FormValue("code"),
+        Opts: r.FormValue("data"),
         Date: datastore.SecondsToTime(time.Seconds()), // Now
     }
 
-    key, _ := datastore.Put(c, datastore.NewIncompleteKey("snippet"), &snippet)
+    key, err := datastore.Put(c, datastore.NewIncompleteKey("snippet"), &snippet)
+    if err != nil {
+        fmt.Fprintf(w, err.String())
+    }
     w.Header().Set("Location", "/reports/" + key.Encode())
     w.WriteHeader(http.StatusFound)
 }

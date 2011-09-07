@@ -15,5 +15,9 @@ handlers:
 - url: /src
   static_dir: src
 
-- url: /reports/.*
+- url: /reports/.+
   script: _go_app
+
+- url: /.*
+  static_files: jshint/templates/404.html
+  upload: jshint/templates/404.html

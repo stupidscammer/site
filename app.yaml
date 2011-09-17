@@ -8,9 +8,13 @@ handlers:
   static_files: index.html
   upload: index.html
 
-- url: /documentation/
-  static_files: documentation.html
-  upload: documentation.html
+- url: /about/
+  static_files: about.html
+  upload: about.html
+
+- url: /options/
+  static_files: options.html
+  upload: options.html
 
 - url: /src
   static_dir: src

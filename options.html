@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <title>JSHint Options</title>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="description" content="JSHint is a JavaScript Code Quality Tool">
+    <meta name="author" content="Anton Kovalyov">
+    <meta name="author" content="JSHint Community">
+
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Droid+Sans:regular,bold|Inconsolata|PT+Sans:400,700">
+    <link rel="stylesheet" href="/src/css/bootstrap.css">
+    <link rel="stylesheet" href="/src/css/page.css">
+  </head>
+
+  <body>
+    <div class="topbar-wrapper navigation">
+      <div class="topbar">
+        <div class="fill">
+          <div class="container">
+            <h3><a href="/">JSHint</a></h3>
+
+            <ul>
+              <li><a href="/about/">About</a></li>
+              <li class="active"><a href="/options/">Options</a></li>
+              <li><a href="/platforms/">Platforms</a></li>
+              <li><a href="https://github.com/jshint/node-jshint/">Node Package</a></li>
+              <li><a href="https://github.com/jshint/jshint/">Source</a></li>
+              <li><a href="https://github.com/jshint/jshint/contributors">Contributors</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container page">
+      <div class="options-docs">
+        <h2>Enforcing Options</h2>
+
+        <p>These options tell JSHint to be more strict towards your code. Use them if you want
+        to allow only a safe subset of JavaScript&mdash;very useful when your codebase is shared
+        with a big number of developers with different skill levels.</p>
+
+        <table class="zebra-striped">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td class="name"><code>bitwise</code></td>
+              <td>
+                <p>This option prohibits the use of bitwise operators such as <code>^</code> (XOR),
+                <code>|</code> (OR) and others. There are two reasons why you would want to enable
+                this option:</p>
+                <ol>
+                  <li>Since JavaScript doesn't have integers (only doulbe precision floating-point
+                  numbers) the bitwise operators here is very slow.</li>
+                  <li>Bitwise operations are very rare in JavaScript programs and very often
+                  <code>&amp;</code> is simply a mistyped <code>&amp;&amp;</code>.</li>
+                </ol>
+              </td>
+            </tr>
+
+            <tr>
+              <td class="name"><code>curly</code></td>
+              <td>
+                <p>This option requires you to always put curly braces around blocks in loops
+                  and conditionals. JavaScript allows you to omit curly braces when the block
+                  consists of only one statement, for example:</p>
+<pre>while (day)
+  shuffle();</pre>
+                <p>However, in some circumstances, it can lead to bugs:</p>
+<pre>while (day)
+  shuffle();
+  sleep(); // You would think that this is a part of your loop, but it is not.</pre>
+
+<p>Generally, unless you are careful, it is safer to require curly braces around all blocks.</p>
+              </td>
+            </tr>
+
+            <tr>
+              <td class="name"><code>eqeqeq</code></td>
+              <td>
+                <p>This options prohibits the use of <code>==</code> and <code>!=</code> in favor
+                of <code>===</code> and <code>!==</code>. The former try to coerce values before
+                comparing them which can lead to some unexpected results.
+                The latter don't do any coercion so they are generally safer.
+
+                If you would like to learn more about type coercion in JavaScript, we recommend
+                <a href="http://javascriptweblog.wordpress.com/2011/02/07/truth-equality-and-javascript/">Truth, Equality and JavaScript</a> by Angus Croll.</p>
+
+                <p><strong>Note:</strong> even if this option is off, JSHint will check for unsafe
+                comparisons like <code>!= null</code> unless option <code>eqnull</code> (see below)
+                is turned on.</p>
+              </td>
+            </tr>
+
+            <tr>
+              <td class="name"><code>forin</code></td>
+              <td>
+                <p>This option requires all <code>for in</code> loops to filter objects' items.
+                The <code>for in</code> statement allows for looping through the names of all of
+                the properties of an object including those inherited throught the prototype chain.
+                This behavior can lead to unexpected items in your object so it is generally
+                safer to always filter inherited properties out as shown in the example:</p>
+<pre>for (key in obj) {
+  if (obj.hasOwnProperty(key)) {
+    // We are sure that obj[key] belongs to the object and was not inherited.
+  }
+}</pre>
+
+                <p>For more in-depth understanding of <code>for in</code> loops in JavaScript,
+                read <a href="http://javascriptweblog.wordpress.com/2011/01/04/exploring-javascript-for-in-loops/">Exploring JavaScript for-in loops</a> by Angus Croll.</p>
+              </td>
+            </tr>
+
+            <tr>
+              <td class="name"><code>immed</code></td>
+              <td>.</td>
+            </tr>
+
+            <tr>
+              <td class="name"><code>latedef</code></td>
+              <td>
+                <p>This option prohibits the use of a variable before it was defined. JavaScript
+                has function scope only and, in addition to that, all variables are always
+                moved&mdash;or hoisted&mdash; to the top of the function. This behavior can lead
+                to some very nasty bugs and that's why it is safer to always use variable only after
+                they have been explicitly defined.</p>
+                <p>For more in-depth understanding of scoping and hoisting in JavaScript,
+                read <a href="http://www.adequatelygood.com/2010/2/JavaScript-Scoping-and-Hoisting">JavaScript
+                Scoping and Hoisting</a> by Ben Cherry.</p>
+              </td>
+            </tr>
+
+            <tr>
+              <td class="name"><code>newcap</code></td>
+              <td>.</td>
+            </tr>
+
+            <tr>
+              <td class="name"><code>noarg</code></td>
+              <td>.</td>
+            </tr>
+
+            <tr>
+              <td class="name"><code>noempty</code></td>
+              <td>.</td>
+            </tr>
+
+            <tr>
+              <td class="name"><code>nonew</code></td>
+              <td>.</td>
+            </tr>
+
+            <tr>
+              <td class="name"><code>nomen</code></td>
+              <td>.</td>
+            </tr>
+
+            <tr>
+              <td class="name"><code>plusplus</code></td>
+              <td>.</td>
+            </tr>
+
+            <tr>
+              <td class="name"><code>regexp</code></td>
+              <td>.</td>
+            </tr>
+
+            <tr>
+              <td class="name"><code>undef</code></td>
+              <td>.</td>
+            </tr>
+
+            <tr>
+              <td class="name"><code>strict</code></td>
+              <td>.</td>
+            </tr>
+
+            <tr>
+              <td class="name"><code>trailing</code></td>
+              <td>.</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>Relaxing Options</h2>
+
+        <table class="zebra-striped">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td class="name"><code>asi</code></td>
+              <td>.</td>
+            </tr>
+
+            <tr>
+              <td class="name"><code>boss</code></td>
+              <td>.</td>
+            </tr>
+
+            <tr>
+              <td class="name"><code>debug</code></td>
+              <td>.</td>
+            </tr>
+
+            <tr>
+              <td class="name"><code>eqnull</code></td>
+              <td>.</td>
+            </tr>
+
+            <tr>
+              <td class="name"><code>es5</code></td>
+              <td>.</td>
+            </tr>
+
+            <tr>
+              <td class="name"><code>evil</code></td>
+              <td>.</td>
+            </tr>
+
+            <tr>
+              <td class="name"><code>expr</code></td>
+              <td>.</td>
+            </tr>
+
+            <tr>
+              <td class="name"><code>globalstrict</code></td>
+              <td>.</td>
+            </tr>
+
+            <tr>
+              <td class="name"><code>iterator</code></td>
+              <td>.</td>
+            </tr>
+
+            <tr>
+              <td class="name"><code>lastsemic</code></td>
+              <td>.</td>
+            </tr>
+
+            <tr>
+              <td class="name"><code>laxbreak</code></td>
+              <td>.</td>
+            </tr>
+
+            <tr>
+              <td class="name"><code>loopfunc</code></td>
+              <td>.</td>
+            </tr>
+
+            <tr>
+              <td class="name"><code>onecase</code></td>
+              <td>.</td>
+            </tr>
+
+            <tr>
+              <td class="name"><code>proto</code></td>
+              <td>.</td>
+            </tr>
+
+            <tr>
+              <td class="name"><code>regexdash</code></td>
+              <td>.</td>
+            </tr>
+
+            <tr>
+              <td class="name"><code>scripturl</code></td>
+              <td>.</td>
+            </tr>
+
+            <tr>
+              <td class="name"><code>shadow</code></td>
+              <td>.</td>
+            </tr>
+
+            <tr>
+              <td class="name"><code>sub</code></td>
+              <td>.</td>
+            </tr>
+
+            <tr>
+              <td class="name"><code>supernew</code></td>
+              <td>.</td>
+            </tr>
+
+            <tr>
+              <td class="name"><code>validthis</code></td>
+              <td>.</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>Environments</h2>
+
+        <p>These options pre-define global variables that are exposed by popular JavaScript
+        libraries and runtime environments&mdash;such as browser or node.js. Essentially they
+        are shortcuts for explicit declarations like <code>/*global $:false,
+        jQuery:false */</code>. Currently, JSHint supports the following options:</p>
+
+        <table class="zebra-striped">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td class="name"><code>browser</code></td>
+              <td>
+                <p>This option defines globals exposed by modern browsers: all the way from good ol'
+                  <code>document</code> and <code>navigator</code> to the HTML5
+                  <a href="https://developer.mozilla.org/en/DOM/FileReader">FileReader</a> and
+                  other new developments in the browser world.</p>
+
+                <p><strong>Note:</strong> this option
+                  doesn't expose variables like <code>alert</code> or <code>console</code>. See
+                  option <code>devel</code> for more information.</p>
+              </td>
+            </tr>
+
+            <tr>
+              <td class="name"><code>couch</code></td>
+              <td><p>This option defines globals exposed by CouchDB.
+              <a href="http://couchdb.apache.org/">CouchDB</a> is a document-oriented database
+              that can be queried and indexed in a MapReduce fashion using JavaScript.</p></td>
+            </tr>
+
+            <tr>
+              <td class="name"><code>devel</code></td>
+              <td>
+                <p>This option defines globals that are usually used for logging poor-man's
+                debugging: <code>console</code>, <code>alert</code>, etc. It is usually a good idea
+                to not to ship them in production because, for example, <code>console.log</code>
+                breaks in legacy versions of Internet Explorer.</p>
+              </td>
+            </tr>
+
+            <tr>
+              <td class="name"><code>dojo</code></td>
+              <td><p>This option defines globals exposed by the
+                <a href="http://dojotoolkit.org/">Dojo Toolkit</a>.</p></td>
+            </tr>
+
+            <tr>
+              <td class="name"><code>jquery</code></td>
+              <td><p>This option defines globals exposed by the
+                <a href="http://jquery.com/">jQuery</a> JavaScript library.</p></td>
+            </tr>
+
+            <tr>
+              <td class="name"><code>mootools</code></td>
+              <td><p>This option defines globals exposed by the
+                <a href="http://mootools.net/">MooTools</a> JavaScript framework.</p></td>
+            </tr>
+
+            <tr>
+              <td class="name"><code>node</code></td>
+              <td><p>This option defines globals available when your code is running inside of
+              Node runtime environment. <a href="http://nodejs.org/">Node.js</a> is a server-side
+              JavaScript environment that uses an asynchronous event-driven model.</td>
+            </tr>
+
+            <tr>
+              <td class="name"><code>nonstandard</code></td>
+              <td><p>This option defines non-standard but widely adopted globals such as
+              <code>escape</code> and <code>unescape</code>.</p></td>
+            </tr>
+
+            <tr>
+              <td class="name"><code>prototypejs</code></td>
+              <td><p>This option defines globals exposed by the
+                <a href="http://www.prototypejs.org/">Prototype</a> JavaScript framework.</p>
+              </td>
+            </tr>
+
+            <tr>
+              <td class="name"><code>rhino</code></td>
+              <td><p>This option defines globals available when your code is running inside of
+              Rhino runtime environment. <a href="http://www.mozilla.org/rhino/">Rhino</a> is an
+              open-source implementation of JavaScript written entirely in Java.</p></td>
+            </tr>
+
+            <tr>
+              <td class="name"><code>wsh</code></td>
+              <td><p>This option defines globals available when your code is running as a script
+              for the <a href="http://en.wikipedia.org/wiki/Windows_Script_Host">Windows Script
+              Host</a>.</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>Legacy</h2>
+
+        <p>These options are legacy from JSLint. Aside from bug fixes they will not be
+        improved in any way and might be removed at any point.</p>
+
+        <table class="zebra-striped">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td class="name"><code>onevar</code></td>
+              <td>
+                <p>This option allows only one <code>var</code> statement per function. Some
+                people suggest that moving all declarations to the top and reducing a number of
+                <code>var</code> keywords to one helps with readability. Example (taken from
+                JSLint/JSHint source code):</p>
+
+<pre>x.nud = function () {
+  var b, f, i, j, p, seen = {}, t;
+
+  b = token.line !== nexttoken.line;
+  if (b) {
+    indent += option.indent;
+      if (nexttoken.from === indent + option.indent) {
+        indent += option.indent;
+      }
+  }
+
+  // [...]
+};</pre>
+              </td>
+            </tr>
+
+            <tr>
+              <td class="name"><code>passfail</code></td>
+              <td><p>This option makes JSHint to stop on the first error or warning.</p></td>
+            </tr>
+
+            <tr>
+              <td class="name"><code>white</code></td>
+              <td>
+                <p>This option make JSHint to check your source code against Douglas Crockford's
+                JavaScript coding style. Unfortunately, his The Good Parts book aside, the actual
+                rules are not very well documented.</p>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="footer">
+      <p><strong>JSHint</strong>, by JSHint Community.</p>
+      <p>Follow us on
+        <a href="http://twitter.com/jshint">Twitter</a> or
+        <a href="https://github.com/jshint">GitHub</a>.
+        Maintained by <a href="http://anton.kovalyov.net/">Anton Kovalyov</a>.
+      </p>
+    </div>
+  </body>
+</html>

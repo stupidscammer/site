@@ -92,3 +92,23 @@ div.page div.options-docs table {
   border: solid 1px #ccc;
   border-radius: 3px;
 }
+
+div.page div.options-docs table thead th {
+  border-bottom-width: 1px;
+  padding: 20px;
+}
+
+div.page div.options-docs table td {
+  line-height: 140%;
+  padding: 20px;
+}
+
+div.page div.options-docs table td.name {
+  width: 120px;
+  vertical-align: top;
+}
+
+div.page div.options-docs table td ol li {
+  color: #444;
+  margin-bottom: 5px;
+}

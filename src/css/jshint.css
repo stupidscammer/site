@@ -42,6 +42,10 @@ span.logo {
   padding-top: 50px;
 }
 
+.container-fluid .content {
+  min-width: 500px;
+}
+
 .editor .sidebar p {
   margin-top: 15px;
 }

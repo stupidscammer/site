@@ -66,6 +66,10 @@ div.page h2 {
   margin-bottom: 10px;
 }
 
+div.page h2.with-padding {
+  margin-top: 50px;
+}
+
 div.page div.row {
   border-bottom: solid 1px #ddd;
   padding-bottom: 40px;
@@ -100,12 +104,13 @@ div.page div.options-docs table thead th {
 
 div.page div.options-docs table td {
   line-height: 140%;
-  padding: 20px;
+  padding: 20px 30px 20px 20px;
 }
 
 div.page div.options-docs table td.name {
   width: 120px;
   vertical-align: top;
+  padding: 20px;
 }
 
 div.page div.options-docs table td ol li {

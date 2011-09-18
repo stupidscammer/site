@@ -16,6 +16,10 @@ handlers:
   static_files: options.html
   upload: options.html
 
+- url: /platforms/
+  static_files: platforms.html
+  upload: platforms.html
+
 - url: /src
   static_dir: src
 

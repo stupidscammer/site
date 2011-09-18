@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <title>Platforms</title>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="description" content="JSHint Integrations">
+    <meta name="author" content="Anton Kovalyov">
+    <meta name="author" content="JSHint Community">
+
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Droid+Sans:regular,bold|Inconsolata|PT+Sans:400,700">
+    <link rel="stylesheet" href="/src/css/bootstrap.css">
+    <link rel="stylesheet" href="/src/css/page.css">
+  </head>
+
+  <body>
+    <div class="topbar-wrapper navigation">
+      <div class="topbar">
+        <div class="fill">
+          <div class="container">
+            <h3><a href="/">JSHint</a></h3>
+
+            <ul>
+              <li><a href="/about/">About</a></li>
+              <li><a href="/options/">Options</a></li>
+              <li class="active"><a href="/platforms/">Platforms</a></li>
+              <li><a href="https://github.com/jshint/node-jshint/">Node Package</a></li>
+              <li><a href="https://github.com/jshint/jshint/">Source</a></li>
+              <li><a href="https://github.com/jshint/jshint/contributors">Contributors</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container page platforms">
+      <h2>JSHint Platforms</h2>
+
+      <div class="row">
+        <div class="span3 columns">
+          <h4>Node, Rhino, WSH, etc.</h4>
+        </div>
+
+        <div class="span13 columns">
+          <p>JSHint supports for Rhino, JavaScriptShell and Windows Script Host out of the box!
+            For example, to use JSHint with Rhino do this:</p>
+          <pre>$ java -jar rhino.jar env/jshint-rhino.js myfile.js</pre>
+          <p>For Node we have a special package that you can install via NPM and then use as an
+          ordinary CLI program:</p>
+<pre>$ npm install jshint
+[...]
+
+$ jshint myfile.js
+Lint free!</pre>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="span3 columns">
+          <h4>Text Editors and IDEs</h4>
+        </div>
+
+        <div class="span13 columns">
+          <div class="tool">
+            <h4>VIM</h4>
+
+            <ul>
+              <li><a href="https://github.com/manalang/jshint.vim">jshint.vim</a>&mdash;VIM plugin
+              and command line tool for running JSHint</li>
+            </ul>
+          </div>
+
+          <div class="tool">
+            <h4>Emacs</h4>
+
+            <ul>
+              <li><a href="https://github.com/daleharvey/jshint-mode">jshint-mode</a>&mdash;JSHint
+              mode for GNU Emacs</li>
+            </ul>
+          </div>
+
+          <div class="tool">
+            <h4>Sublime Text 2</h4>
+
+            <ul>
+              <li><a href="https://github.com/uipoet/sublime-jshint">sublime-jshint</a>&mdash;JSHint
+              build package for Sublime Text 2</li>
+              <li><a href="https://github.com/Kronuz/SublimeLinter">Sublime Linter</a>&mdash;inline
+              lint highlighting for the Sublime Text 2</a></li>
+            </ul>
+          </div>
+
+          <div class="tool">
+            <h4>TextMate</h4>
+
+            <ul>
+              <li><a href="http://fgnass.posterous.com/jslint-in-textmate">JSHint TextMate Bundle</a></li>
+              <li><a href="http://rondevera.github.com/jslintmate/">JSLintMate</a> (supports both JSLint and JSHint)</a></li>
+            </ul>
+          </div>
+
+          <div class="tool">
+            <h4>Visual Studio</h4>
+
+            <ul>
+              <li><a href="https://github.com/jamietre/SharpLinter">SharpLinter</a> (supports both
+              JSLint and JSHint)</li>
+              <li><a href="http://jslint4vs2010.codeplex.com/">JSLint for Visual Studio</a> (supports
+              both JSLint and JSHint)</li>
+            </ul>
+          </div>
+
+          <div class="tool">
+            <h4><a href="http://shiftedit.net/">ShiftEdit</a></h4>
+
+            <p>ShiftEdit IDE has built-in support for JSHint</p>
+          </div>
+
+          <div class="tool">
+            <h4><a href="http://www.activestate.com/blog/2011/05/komodo-7-alpha-2-improved-syntax-checking">Komodo</a></h4>
+
+            <p>Komodo 7 now ships with built-in support for JSHint</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="span3 columns">
+          <h4>Other cool stuff</h4>
+        </div>
+
+        <div class="span13 columns">
+          <div class="tool">
+            <h4><a href="http://rixth.github.com/jshintr/">JSHintr</a></h4>
+
+            <p>JSHintr is a web tool that allows you to set your own code standards,
+            easily review a file against these standards, and share the output with
+            other developers.</p>
+          </div>
+
+          <div class="tool">
+            <h4><a href="https://github.com/goatslacker/jshint-autofix">jshint-autofix</a></h4>
+
+            <p>jshint-autofix is a tool that automatically fixes mistakes&mdash;such as missing
+            semicolon, multiple definitions, etc.&mdash;reported by JSHint.</p>
+          </div>
+
+          <div class="tool">
+            <h4><a href="http://rubygems.org/gems/jshint">Ruby Gem</a></h4>
+
+            <p>You can install JSHint as a Ruby Gem:</p>
+            <pre>gem install jshint</pre>
+          </div>
+
+          <div class="tool">
+            <h4><a href="http://jish.github.com/pre-commit/">pre-commit</a></h4>
+
+            <p>pre-commit checks your code for errors before you commit it.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <p><strong>JSHint</strong>, by JSHint Community.</p>
+      <p>Follow us on
+        <a href="http://twitter.com/jshint">Twitter</a> or
+        <a href="https://github.com/jshint">GitHub</a>.
+        Maintained by <a href="http://anton.kovalyov.net/">Anton Kovalyov</a>.
+      </p>
+    </div>
+  </body>
+</html>

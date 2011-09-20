@@ -24,6 +24,10 @@ handlers:
   static_files: browser.html
   upload: browser.html
 
+- url: /favicon.ico
+  static_files: favicon.ico
+  upload: favicon.ico
+
 - url: /src
   static_dir: src
 

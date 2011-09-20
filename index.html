@@ -51,216 +51,224 @@
       </div>
     </div>
 
-    <table class="editor">
-      <tr><td class="sidebar">
-        <h3>Warn</h3>
+    <div class="container editor">
+      <div class="editorArea">
+        <div class="buttons">
+          <table>
+            <tr>
+              <td class="message">
+                <div class="alert-message error" style="display:none;">
+                  <p><span class="logo">JSHint</span> has found potential problems in your code.
+                  See <a href="#report">detailed report</a>.</p>
+                </div>
 
-        <ul class="inputs-list">
-          <li>
-            <label>
-              <input type="checkbox" name="debug" class="neg" checked>
-              <span>About debugging code</span>
-            </label>
-          </li>
+                <div class="alert-message success" style="display:none;">
+                  <p>Good job! <span class="logo">JSHint</span> hasn't found any problems with
+                  your code.</p>
+                </div>
 
-          <li>
-            <label>
-              <input type="checkbox" name="forin" checked>
-              <span>About unsafe <code>for..in</code></span>
-            </label>
-          </li>
+                <div class="alert-message info">
+                  <p><span class="logo"><string>JSHint</string></span> is a tool to detect
+                  errors and potential problems in JavaScript code.</p>
+                </div>
+              </td>
 
-          <li>
-            <label>
-              <input type="checkbox" name="eqnull" class="neg" checked>
-              <span>About <code>== null</code></span>
-            </label>
-          </li>
+              <td>
+                <button data-action="lint" class="btn primary">Lint</button>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <textarea id="editor">// Your code goes here.</textarea>
+      </div>
 
-          <li>
-            <label>
-              <input type="checkbox" name="noarg" checked>
-              <span>About <code>arguments.caller</code> and <code>.callee</code></span>
-            </label>
-          </li>
+      <div class="options">
+        <div class="span6">
+          <h3>Warn</h3>
 
-          <li>
-            <label>
-              <input type="checkbox" name="noempty" checked>
-              <span>About empty blocks</span>
-            </label>
-          </li>
+          <ul class="inputs-list">
+            <li>
+              <label>
+                <input type="checkbox" name="debug" class="neg" checked>
+                <span>About debugging code</span>
+              </label>
+            </li>
 
-          <li>
-            <label>
-              <input type="checkbox" name="eqeqeq" checked>
-              <span>About unsafe comparisons</span>
-            </label>
-          </li>
+            <li>
+              <label>
+                <input type="checkbox" name="forin" checked>
+                <span>About unsafe <code>for..in</code></span>
+              </label>
+            </li>
 
-          <li>
-            <label>
-              <input type="checkbox" name="boss" class="neg" checked>
-              <span>About assignments inside <code>if/for/...</code>
-            </label>
-          </li>
+            <li>
+              <label>
+                <input type="checkbox" name="eqnull" class="neg" checked>
+                <span>About <code>== null</code></span>
+              </label>
+            </li>
 
-          <li>
-            <label>
-              <input type="checkbox" name="funcloop"  class="neg" checked>
-              <span>About functions inside loops</span>
-            </label>
-          </li>
+            <li>
+              <label>
+                <input type="checkbox" name="noarg" checked>
+                <span>About <code>arguments.caller</code> and <code>.callee</code></span>
+              </label>
+            </li>
 
-          <li>
-            <label>
-              <input type="checkbox" name="evil" class="neg" checked>
-              <span>About <code>eval</code></span>
-            </label>
-          </li>
+            <li>
+              <label>
+                <input type="checkbox" name="noempty" checked>
+                <span>About empty blocks</span>
+              </label>
+            </li>
 
-          <li>
-            <label>
-              <input type="checkbox" name="laxbreak" class="neg" checked>
-              <span>About unsafe line breaks</span>
-            </label>
-          </li>
+            <li>
+              <label>
+                <input type="checkbox" name="eqeqeq" checked>
+                <span>About unsafe comparisons</span>
+              </label>
+            </li>
 
-          <li>
-            <label>
-              <input type="checkbox" name="bitwise" checked>
-              <span>When bitwise operators are used</span>
-            </label>
-          </li>
+            <li>
+              <label>
+                <input type="checkbox" name="boss" class="neg" checked>
+                <span>About assignments inside <code>if/for/...</code>
+              </label>
+            </li>
 
-          <li>
-            <label>
-              <input type="checkbox" name="strict" checked>
-              <span>When code is not in strict mode</span>
-            </label>
-          </li>
-
-          <li>
-            <label>
-              <input type="checkbox" name="undef" checked>
-              <span>When variable is undefined</span>
-            </label>
-          </li>
-
-          <li>
-            <label>
-              <input type="checkbox" name="curly" checked>
-              <span>When blocks omit <code>{}</code></span>
-            </label>
-          </li>
-
-          <li>
-            <label>
-              <input type="checkbox" name="nonew" class="neg" checked>
-              <span>When <code>new</code> is used for side effects</span>
-            </label>
-          </li>
-        </ul>
-
-        <h3>Assume</h3>
-
-        <ul class="inputs-list">
-          <li>
-            <label>
-              <input type="checkbox" name="browser" checked>
-              <span>Browser</span>
-            </label>
-          </li>
-
-          <li>
-            <label>
-              <input type="checkbox" name="devel">
-              <span>Development (<code>console</code>, etc.)</span>
-            </label>
-          </li>
-
-          <li>
-            <label>
-              <input type="checkbox" name="jquery">
-              <span>jQuery</span>
-            </label>
-          </li>
-
-          <li>
-            <label>
-              <input type="checkbox" name="es5">
-              <span>EcmaScript 5</span>
-            </label>
-          </li>
-
-          <li>
-            <label>
-              <input type="checkbox" name="nodejs">
-              <span>NodeJS</span>
-            </label>
-          </li>
-        </ul>
-
-        <p>Check out more options in the <a href="/options/">documentation</a>.</p>
-      </td>
-
-      <td class="content">
-        <div class="editorArea">
-          <div class="buttons">
-            <table>
-              <tr>
-                <td class="message">
-                  <div class="alert-message error" style="display:none;">
-                    <p><span class="logo">JSHint</span> has found potential problems in your code.
-                    See <a href="#report">detailed report</a>.</p>
-                  </div>
-
-                  <div class="alert-message success" style="display:none;">
-                    <p>Good job! <span class="logo">JSHint</span> hasn't found any problems with
-                    your code.</p>
-                  </div>
-
-                  <div class="alert-message info">
-                    <p><span class="logo"><string>JSHint</string></span> is a tool to detect
-                    errors and potential problems in JavaScript code.</p>
-                  </div>
-                </td>
-
-                <td>
-                  <button data-action="lint" class="btn primary">Lint</button>
-                </td>
-              </tr>
-            </table>
-          </div>
-          <textarea id="editor">// Your code goes here.</textarea>
+            <li>
+              <label>
+                <input type="checkbox" name="funcloop"  class="neg" checked>
+                <span>About functions inside loops</span>
+              </label>
+            </li>
+          </ul>
         </div>
 
-        <a name="report"></a>
-        <div class="report">
-          <div class="alert-message block-message error" style="display:none;">
-            <div class="row">
-              <div class="columns span10">
-                <h4>JSHint Report</h4>
-              </div>
-              <div class="columns span5">
-                <button data-action="save" class="btn small">Save this report</button>
-              </div>
-            </div>
+        <div class="span5">
+          <h3>&nbsp;</h3>
 
-            <div class="options">
-              <pre></pre>
-            </div>
+          <ul class="inputs-list">
+           <li>
+              <label>
+                <input type="checkbox" name="evil" class="neg" checked>
+                <span>About <code>eval</code></span>
+              </label>
+            </li>
 
-            <h4>Errors:</h4>
+            <li>
+              <label>
+                <input type="checkbox" name="laxbreak" class="neg" checked>
+                <span>About unsafe line breaks</span>
+              </label>
+            </li>
 
-            <ul class="jshint-errors"></ul>
+            <li>
+              <label>
+                <input type="checkbox" name="bitwise" checked>
+                <span>When bitwise operators are used</span>
+              </label>
+            </li>
 
-            <p>Feel like some warnings are incorrect? You can configure JSHint to turn off
-            some warnings. Read more in the <a href="/docs">documentation</a>.</p>
-          </div>
+            <li>
+              <label>
+                <input type="checkbox" name="strict" checked>
+                <span>When code is not in strict mode</span>
+              </label>
+            </li>
+
+            <li>
+              <label>
+                <input type="checkbox" name="undef" checked>
+                <span>When variable is undefined</span>
+              </label>
+            </li>
+
+            <li>
+              <label>
+                <input type="checkbox" name="curly" checked>
+                <span>When blocks omit <code>{}</code></span>
+              </label>
+            </li>
+
+            <li>
+              <label>
+                <input type="checkbox" name="nonew" class="neg" checked>
+                <span>When <code>new</code> is used for side effects</span>
+              </label>
+            </li>
+          </ul>
         </div>
-      </td>
-    </table>
+
+        <div class="span4">
+          <h3>Assume</h3>
+
+          <ul class="inputs-list">
+            <li>
+              <label>
+                <input type="checkbox" name="browser" checked>
+                <span>Browser</span>
+              </label>
+            </li>
+
+            <li>
+              <label>
+                <input type="checkbox" name="devel">
+                <span>Development (<code>console</code>, etc.)</span>
+              </label>
+            </li>
+
+            <li>
+              <label>
+                <input type="checkbox" name="jquery">
+                <span>jQuery</span>
+              </label>
+            </li>
+
+            <li>
+              <label>
+                <input type="checkbox" name="es5">
+                <span>EcmaScript 5</span>
+              </label>
+            </li>
+
+            <li>
+              <label>
+                <input type="checkbox" name="nodejs">
+                <span>NodeJS</span>
+              </label>
+            </li>
+          </ul>
+
+          <a class="more-options" href="/options/">More options</a>
+        </div>
+      </div>
+
+      <a name="report"></a>
+      <div class="report span16">
+        <div class="alert-message block-message error" style="display:none;">
+          <div class="row">
+            <div class="columns span10">
+              <h4>JSHint Report</h4>
+            </div>
+            <div class="columns span5">
+              <button data-action="save" class="btn small">Save this report</button>
+            </div>
+          </div>
+
+          <div class="options">
+            <pre></pre>
+          </div>
+
+          <h4>Errors:</h4>
+
+          <ul class="jshint-errors"></ul>
+
+          <p>Feel like some warnings are incorrect? You can configure JSHint to turn off
+          some warnings. Read more in the <a href="/docs">documentation</a>.</p>
+        </div>
+      </div>
+    </div>
 
     <div class="footer">
       <p><strong>JSHint</strong>, by JSHint Community.</p>
@@ -288,11 +296,6 @@
           }
         }
       });
-
-      var el = Editor.getScrollerElement();
-      el.style.height = "600px";
-      Editor.focus();
-      Editor.refresh();
     </script>
   </body>
 </html>

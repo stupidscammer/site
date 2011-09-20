@@ -20,6 +20,10 @@ handlers:
   static_files: platforms.html
   upload: platforms.html
 
+- url: /browser/
+  static_files: browser.html
+  upload: browser.html
+
 - url: /src
   static_dir: src
 

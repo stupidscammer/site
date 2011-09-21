@@ -18,14 +18,9 @@ type Report struct {
 var templates = make(map[string]*template.Template)
 
 func init() {
-    templates["report"] = template.New(nil)
-    if err := templates["report"].ParseFile("jshint/templates/report.html"); err != nil {
-        panic("Can't parse report.html")
-    }
-
-    for _, tmpl := range []string{"500", "404"} {
+    for _, tmpl := range []string{"500", "404", "report"} {
         templates[tmpl] = template.New(nil)
-        templates[tmpl].SetDelims("[", "]")
+        templates[tmpl].SetDelims("{{", "}}")
         if err := templates[tmpl].ParseFile("jshint/templates/" + tmpl + ".html"); err != nil {
             panic("Can't parse " + tmpl + ".html")
         }

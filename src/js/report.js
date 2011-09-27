@@ -26,6 +26,17 @@ $.domReady(function () {
     });
   }
 
+  function escapeHTML(text) {
+    var esc = text;
+    var re  = [ [/&/g, "&amp;"], [/</g, "&lt;"], [/>/g, "&gt;"] ];
+
+    for (var i = 0, len = re.length; i < len; i++) {
+      esc = esc.replace(re[i][0], re[i][1]);
+    }
+    console.log(esc);
+    return esc;
+  }
+
   for (var i = 0, opt; opt = optarr[i]; i++) {
     name = opt.split(':')[0];
     val  = opt.split(':')[1];
@@ -46,7 +57,7 @@ $.domReady(function () {
   for (var i = 0, err; err = report.errors[i]; i++) {
     errors.append(_('<li><p>' + templates.error + '</p></li>', {
       line: err.line,
-      code: err.evidence,
+      code: escapeHTML(err.evidence),
       msg:  err.reason
     }));
   }

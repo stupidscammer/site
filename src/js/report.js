@@ -33,7 +33,7 @@ $.domReady(function () {
     for (var i = 0, len = re.length; i < len; i++) {
       esc = esc.replace(re[i][0], re[i][1]);
     }
-    console.log(esc);
+
     return esc;
   }
 

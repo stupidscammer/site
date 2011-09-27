@@ -53,7 +53,7 @@ $.domReady(function () {
     for (var i = 0, err; err = report.errors[i]; i++) {
       errors.append(_('<li><p>' + templates.error + '</p></li>', {
         line: err.line,
-        code: escapeHTML(err.evidence),
+        code: err.evidence ? escapeHTML(err.evidence) : '',
         msg:  err.reason
       }));
 

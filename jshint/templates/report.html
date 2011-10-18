@@ -66,12 +66,12 @@
 
     <div class="container options">
       <h3>Saved JSHint Report:</h3>
-      <pre>{{Opts|html}}</pre>
+      <pre>{{.Opts | printf "%s" | html}}</pre>
     </div>
 
     <div class="container code">
       <div class="editorArea">
-        <textarea id="editor">{{Code}}</textarea>
+        <textarea id="editor">{{.Code | printf "%s" | html}}</textarea>
       </div>
     </div>
 

@@ -66,33 +66,26 @@
 
     <div class="container editor">
       <div class="editorArea">
-        <div class="buttons">
-          <table>
-            <tr>
-              <td class="message">
-                <div class="alert-message error" style="display:none;">
-                  <p><span class="logo">JSHint</span> has found potential problems in your code.
-                  See <a href="#report">detailed report</a>.</p>
-                </div>
-
-                <div class="alert-message success" style="display:none;">
-                  <p>Good job! <span class="logo">JSHint</span> hasn't found any problems with
-                  your code.</p>
-                </div>
-
-                <div class="alert-message info">
-                  <p><span class="logo"><string>JSHint</string></span> is a tool to detect
-                  errors and potential problems in JavaScript code.</p>
-                </div>
-              </td>
-
-              <td>
-                <button data-action="lint" class="btn primary">Lint</button>
-              </td>
-            </tr>
-          </table>
+        <div class="alert-message error" style="display:none;">
+          <p><span class="logo">JSHint</span> has found potential problems in your code.
+          See <a href="#report">detailed report</a>.</p>
         </div>
+
+        <div class="alert-message success" style="display:none;">
+          <p>Good job! <span class="logo">JSHint</span> hasn't found any problems with
+          your code.</p>
+        </div>
+
+        <div class="alert-message info">
+          <p><span class="logo"><string>JSHint</string></span> is a tool to detect
+          errors and potential problems in JavaScript code.</p>
+        </div>
+
         <textarea id="editor">// Your code goes here.</textarea>
+
+        <div class="buttons">
+          <button data-action="lint" class="btn primary">Lint</button>
+        </div>
       </div>
 
       <div class="options">

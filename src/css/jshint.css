@@ -57,47 +57,26 @@ span.logo {
   text-align: right;
 }
 
-.editorArea > .buttons .alert-message {
+.editorArea > .alert-message {
   margin-bottom: 0;
   padding: 5px 14px 6px;
 }
 
-.editorArea > .buttons .error a {
+.editorArea > .error a {
   color: #fff;
   border-bottom: dashed 1px #fff;
 }
 
-.editorArea > .buttons .error a:hover {
+.editorArea > .error a:hover {
   border-bottom: solid 1px #fff;
   text-decoration: none;
-}
-
-.editorArea > .buttons table {
-  margin: 0;
-  border: 0;
-  padding: 0;
-  border-collapse: collapse;
-  font-size: 10pt;
-}
-
-.editorArea > .buttons table td {
-  text-align: right;
-  padding: 0;
-  margin: 0;
-  border: 0;
-}
-
-.editorArea > .buttons table td.message {
-  text-align: left;
-  width: 100%;
-  padding-right: 10px;
 }
 
 .editorArea .CodeMirror {
   background-color: #fff;
   border-radius: 3px;
   border: solid 1px #999;
-  margin-top: 10px;
+  margin: 10px 0;
 }
 
 .editorArea .CodeMirror-scroll {

@@ -1,5 +1,5 @@
 application: jshint-site
-version: 1
+version: 3
 runtime: go
 api_version: 3
 
@@ -23,6 +23,10 @@ handlers:
 - url: /browser/
   static_files: browser.html
   upload: browser.html
+
+- url: /changelog/
+  static_files: changelog.html
+  upload: changelog.html
 
 - url: /favicon.ico
   static_files: favicon.ico

@@ -2,11 +2,11 @@
 
 <html lang="en">
   <head>
-    <title>JSHint Report</title>
+    <title>JSHint Change Log</title>
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="description" content="JSHint Report. JSHint is a JavaScript Code Quality Tool">
+    <meta name="description" content="JSHint Change Log">
     <meta name="author" content="Anton Kovalyov">
     <meta name="author" content="JSHint Community">
 
@@ -18,16 +18,8 @@
     <![endif]-->
 
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Droid+Sans:regular,bold|Inconsolata|PT+Sans:400,700">
-    <link rel="stylesheet" href="/src/css/codemirror.css">
-    <link rel="stylesheet" href="/src/css/codemirror-theme.css">
     <link rel="stylesheet" href="/src/css/bootstrap.css">
     <link rel="stylesheet" href="/src/css/page.css">
-
-    <script src="/src/js/ender.js"></script>
-    <script src="/src/js/codemirror.js"></script>
-    <script src="/src/js/javascript.js"></script>
-    <script src="/src/js/jshint.js"></script>
-    <script src="/src/js/report.js"></script>
 
     <script type="text/javascript">
       var _gaq = _gaq || [];
@@ -64,26 +56,55 @@
       </div>
     </div>
 
-    <div class="container options">
-      <h3>Saved JSHint Report:</h3>
-      <pre>{{.Opts | printf "%s" | html}}</pre>
-    </div>
+    <div class="container page">
+      <h2 style="margin-bottom:50px;">Change Log</h2>
 
-    <div class="container code">
-      <div class="editorArea">
-        <textarea id="editor">{{.Code | printf "%s" | html}}</textarea>
+      <div class="row">
+        <div class="span5 columns">
+          <h3>December 30, 2012</h3>
+        </div>
+
+        <div class="span11 columns">
+          <h2>New release: r02</h2>
+
+          <p>A huge* number of tweaks and bugfixes. New options:
+          <code>funcscope</code>, <code>esnext</code>, <code>multistr</code> and
+          <code>smarttabs</code>. To see what they do, refer to the <a href="/options/">docs</a>.</p>
+
+          <p>Many thanks to our awesome contributors who participated in this release:
+          Wolfgang Kluge, Josh Perez, Ben Blank, Rob Friesel, Matt, Nicholas Zakas, dionyziz,
+          Ed Lui, Felix Gnass, Tom Rix, Dominic Barnes, Nick Goris, Nicolas Ferrero, Ron DeVera,
+          Sean Carpenter, shahyar, Aparajita Fishman, ckknight, Jakub Suder and Dylan Smith.</p>
+
+          <p>Since it's been a few months this release is too big to summarzie. Future releases will
+          be smaller and easier to summarize.</p>
+
+          <h3>Welcome Wolfgang and Josh</h3>
+
+          <p>Please welcome new JSHint Core team members Wolfgang Kluge and Josh Perez! I'm really
+          excited to work with them on making JSHint the best code quality tool for JavaScript.</p>
+        </div>
       </div>
-    </div>
 
-    <div class="container report">
-      <div class="alert-message block-message error">
-        <h4>JSHint has found potential problems in this code:</h4>
+      <div class="row">
+        <div class="span5 columns">
+          <h3>Hello.</h3>
+        </div>
 
-        <ul class="jshint-errors"></ul>
+        <div class="span11 columns">
+          <h2>Back-story</h2>
 
-        <p>Feel like some warnings are incorrect? You can configure JSHint to turn off
-        some warnings. Read more in the <a href="/options/">documentation</a>.</p>
-      </div>
+          <p>After almost a year into development we decided that it's time to make more frequent
+          stable releases and keep a change log.</p>
+
+          <p>Here are some links from the past:</p>
+
+          <ul>
+            <li><a href="http://anton.kovalyov.net/2011/03/01/jshint-edition-update">JSHint Edition Update</a></li>
+            <li><a href="http://anton.kovalyov.net/2011/02/20/why-i-forked-jslint-to-jshint">
+              Why I forked JSLint to JSHint</a></li>
+          </ul>
+        </div>
     </div>
 
     <div class="footer">

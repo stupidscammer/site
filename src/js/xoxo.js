@@ -1,3 +1,6 @@
+/*jshint browser:true, expr:true, boss:true, strict:true, undef:true */
+/*global $:false, Editor:false, JSHINT:false */
+
 $.domReady(function () {
   "use strict";
 

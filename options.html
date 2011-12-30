@@ -310,11 +310,10 @@ World";</pre>
               <td class="name"><code>asi</code></td>
               <td>
                 <p>This option suppresses warnings about missing semicolons. There is a lot of FUD
-                about semicolon spreaded by quite a few people in the community. The common myths
-                are that semicolons are required all the time (they are not) and that they are
-                unreliable. JavaScript has a small and stable rules regarding semicolons that
-                is followed by <strong>all</strong> browsers so it is up to you to decide
-                whether you should or should not use semicolons in your code.</p>
+                (fear, uncertainty and doubt) spread about semicolon spreaded by quite a few people
+                in the community. The common myths are that semicolons are required all the time (they are not) and that they are unreliable. JavaScript has rules about semicolons which are
+                followed by <strong>all</strong> browsers so it is up to you to decide whether you
+                should or should not use semicolons in your code.</p>
 
                 <p>For more information about semicolons in JavaScript read
                 <a href="http://blog.izs.me/post/2353458699/an-open-letter-to-javascript-leaders-regarding">An Open Letter to JavaScript Leaders Regarding Semicolons</a> by Isaac Schlueter and
@@ -326,9 +325,9 @@ World";</pre>
             <tr>
               <td class="name"><code>boss</code></td>
               <td>
-                <p>This option suppresses warnging about the use of assignments in cases where
-                comparisons are expected. More often than not code like <code>if (a = 10) {}</code>
-                is a typo, however, it can be useful in cases like this one:</p>
+                <p>This option suppresses warnings about the use of assignments in cases where
+                comparisons are expected. More often than not, code like <code>if (a = 10) {}</code>
+                is a typo. However, it can be useful in cases like this one:</p>
                 <pre>for (var i = 0, person; person = people[i]; i++) {}</pre>
               </td>
             </tr>
@@ -362,6 +361,19 @@ World";</pre>
             </tr>
 
             <tr>
+              <td class="name"><code>esnext</code></td>
+              <td>
+                <p>This option tells JSHint that your code uses ES.next specific features such as
+                <code>const</code> and <code>let</code>. Note that these features are not finalized
+                yet and not all browsers implement them.</p>
+
+                <p>More info:</p>
+                <ol>
+                  <li><a href="http://wiki.ecmascript.org/doku.php?id=harmony:specification_drafts">
+                  Draft Specification for ES.next (ECMA-262 Ed. 6)</a></li>
+                </ol>
+              </td>
+            <tr>
               <td class="name"><code>evil</code></td>
               <td>
                 <p>This option suppresses warnings about the use of <code>eval</code>. The use of
@@ -378,6 +390,28 @@ World";</pre>
                 you would expect to see assignments or function calls. Most of the time, such
                 code is a typo. However, it is not forbidden by the spec and that's why
                 this warning is optional.</p>
+              </td>
+            </tr>
+
+            <tr>
+              <td class="name"><code>funcscope</code></td>
+              <td>
+                <p>This option suppresses warnings about declaring variables inside of control
+                structures while accessing them later from the outside. Even though JavaScript has
+                only two real scopes&mdash;global and function&mdash;such practice leads to
+                confusion among people new to the language and hard-to-debug bugs. This is way,
+                by default, JSHint warns about variables that are used outside of their intended
+                scope.</p>
+
+<pre>function test() {
+  if (true) {
+    var x = 0;
+  }
+
+  x += 1; // Default: 'x' used out of scope.
+          // No warning when funcscope:true
+}
+</pre>
               </td>
             </tr>
 
@@ -448,6 +482,28 @@ for (var i = 0; i &lt; 10; i++) {
             </tr>
 
             <tr>
+              <td class="name"><code>multistr</code></td>
+              <td>
+                <p>This option suppresses warnings about multi-line strings. Multi-line strings
+                can be dangerous in JavaScript because all hell breaks loose if you accidentally
+                put a whitespace in between the escape character (<code>\</code>) and a new line.</p>
+
+                <p>Not that even though this option allows correct multi-line strings, it still
+                warns about multi-line strings without escape characters or with anything in between
+                the escape character and a whitespace.</p>
+
+<pre>/*jshint multistr:true */
+
+var text = "Hello\
+World"; // All good.
+
+text = "Hello
+World"; // Warning, no escape character.
+
+text = "Hello\<span style="background-color:hotpink">&nbsp;</span>
+World"; // Warning, there is a space after \ (colored pink)</pre>
+
+            <tr>
               <td class="name"><code>onecase</code></td>
               <td>
                 <p>This option suppresses watnings about switches with just one case. Most
@@ -476,6 +532,15 @@ for (var i = 0; i &lt; 10; i++) {
               <td>
                 <p>This option suppresses warnings about the use of script-targeted
                 URLs&mdash;such as <code>javascript:...</code>.</p>
+              </td>
+            </tr>
+
+            <tr>
+              <td class="name"><code>smarttabs</code></td>
+              <td>
+                <p>This option suppresses warnings about mixed tabs and spaces when the latter are
+                used for alignmnent only. The technique is called
+                <a href="http://www.emacswiki.org/emacs/SmartTabs">SmartTabs</a>.</p>
               </td>
             </tr>
 
@@ -653,9 +718,8 @@ for (var i = 0; i &lt; 10; i++) {
               <td class="name"><code>onevar</code></td>
               <td>
                 <p>This option allows only one <code>var</code> statement per function. Some
-                people suggest that moving all declarations to the top and reducing a number of
-                <code>var</code> keywords to one helps with readability. Example (taken from
-                JSLint/JSHint source code):</p>
+                people think that having a single <code>var</code> in a function, at the top of the
+                function, helps readability. Example (taken from JSLint/JSHint source code):</p>
 
 <pre>x.nud = function () {
   var b, f, i, j, p, seen = {}, t;
@@ -675,15 +739,15 @@ for (var i = 0; i &lt; 10; i++) {
 
             <tr>
               <td class="name"><code>passfail</code></td>
-              <td><p>This option makes JSHint to stop on the first error or warning.</p></td>
+              <td><p>This option makes JSHint stop on the first error or warning.</p></td>
             </tr>
 
             <tr>
               <td class="name"><code>white</code></td>
               <td>
-                <p>This option make JSHint to check your source code against Douglas Crockford's
-                JavaScript coding style. Unfortunately, his The Good Parts book aside, the actual
-                rules are not very well documented.</p>
+                <p>This option make JSHint check your source code against Douglas Crockford's
+                JavaScript coding style. Unfortunately, his &ldquo;The Good Parts&rdquo; book aside,
+                the actual rules are not very well documented.</p>
               </td>
             </tr>
           </tbody>

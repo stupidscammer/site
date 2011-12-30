@@ -31,5 +31,8 @@ handlers:
 - url: /src
   static_dir: src
 
+- url: /downloads/
+  static_dir: downloads
+
 - url: /.+
   script: _go_app

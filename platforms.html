@@ -67,7 +67,13 @@
         <div class="span13 columns">
           <p>JSHint supports for Rhino, JavaScriptCore and Windows Script Host out of the box!
             For example, to use JSHint with Rhino do this:</p>
-          <pre>$ java -jar rhino.jar env/jshint-rhino.js myfile.js</pre>
+          <pre>$ make rhino
+[...]
+
+$ rhino build/jshint-rhino.js myfile.js</pre>
+
+<p>If you don't want to build the <code>jshint-rhino</code> file yourself, you can download it
+<a href="/downloads/jshint-rhino.js">here</a>.</p>
 
           <p>Windows Script Host:</p>
           <pre>&gt; cscript env/wsh.js myfile.js</pre>
@@ -77,7 +83,7 @@
 
           <p>For Node we have a special package that you can install via NPM and then use as an
           ordinary CLI program:</p>
-<pre>$ npm install jshint
+<pre>$ npm install jshint -g
 [...]
 
 $ jshint myfile.js

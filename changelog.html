@@ -35,7 +35,7 @@
     </script>
   </head>
 
-  <body>
+  <body class="changelog">
     <div class="topbar-wrapper navigation">
       <div class="topbar">
         <div class="fill">
@@ -65,6 +65,58 @@
         </div>
 
         <div class="span11 columns">
+          <h2>New release: r03</h2>
+
+          <p>This release contains significant improvements to the way JSHint treats ES5 accessor
+          functions:</p>
+
+          <ul>
+            <li>Getters no longer raise the &ldquo;Don't make functions within a loop&rdquo;
+            warnings.</li>
+            <li>JSHint no longer enforces <code>value</code> as parameter name for setter functions.</li>
+            <li>JSHint no longer requires setter functions to follow getters.</li>
+            <li>Improved checks for duplicate properties. For example, JSHint now understands that this code is valid:
+<pre>x = {
+  get x: function () {},
+  set x: function () {}
+};</pre> While this one is not:
+              <pre>x = {
+  get x: function () {},
+  x: true
+};</pre></li>
+            <li>Tests cover more use cases with ES5 accessors.
+          </ul>
+
+          <p>Also this release fixes a bug with JSHint producing false warning for the following
+          code: <pre>somevar.replace(/[0-9-]/g, '')</pre></p>
+
+          <p>Related discussions:</p>
+
+          <ul>
+            <li><a href="https://github.com/jshint/jshint/pull/382">GH-382</a>: Do not allow to
+              duplicate a setter.</li>
+            <li><a href="https://github.com/jshint/jshint/pull/401">GH-401</a>: Correctly identify
+              duplicate object properties.</li>
+            <li><a href="https://github.com/jshint/jshint/pull/408">GH-408</a>: Follow-up to GH-401.</li>
+            <li><a href="https://github.com/jshint/jshint/issues/383">GH-383</a>: Unescaped '-' in
+              regexp.</li>
+          </ul>
+
+          <p>Thanks to Máté Farkas and Wolfgang Kluge.</p>
+
+          <h3>Welcome Wolfgang and Josh</h3>
+
+          <p>Please welcome new JSHint Core team members Wolfgang Kluge and Josh Perez! I'm really
+          excited to work with them on making JSHint the best code quality tool for JavaScript.</p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="span5 columns">
+          <h3>December 23, 2012</h3>
+        </div>
+
+        <div class="span11 columns">
           <h2>New release: r02</h2>
 
           <p>A huge* number of tweaks and bugfixes. New options:
@@ -75,11 +127,6 @@
           Wolfgang Kluge, Josh Perez, Ben Blank, Rob Friesel, Matt, Nicholas Zakas, dionyziz,
           Ed Lui, Felix Gnass, Tom Rix, Dominic Barnes, Nick Goris, Nicolas Ferrero, Ron DeVera,
           Sean Carpenter, shahyar, Aparajita Fishman, ckknight, Jakub Suder and Dylan Smith.</p>
-
-          <h3>Welcome Wolfgang and Josh</h3>
-
-          <p>Please welcome new JSHint Core team members Wolfgang Kluge and Josh Perez! I'm really
-          excited to work with them on making JSHint the best code quality tool for JavaScript.</p>
 
           <p>* &mdash; Since it's been a few months this release is too big to summarzie. Future releases will
           be smaller and easier to summarize.</p>

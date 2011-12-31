@@ -142,3 +142,8 @@ div.platforms div.tool h4 {
 div.platforms div.tool li {
   color: #444;
 }
+
+body.changelog li {
+  margin-bottom: 5px;
+  color: #444;
+}

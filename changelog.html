@@ -61,7 +61,38 @@
 
       <div class="row">
         <div class="span5 columns">
-          <h3>December 30, 2012</h3>
+          <h3>January 08, 2012</h3>
+        </div>
+
+        <div class="span11 columns">
+          <h2>New release: r04</h2>
+
+          <p>This is a bugfix release that also contains some improvements to our tests:</p>
+
+          <ul>
+            <li>Added test coverage helper and restructured our test files.</li>
+            <li>Removed obsolete <code>JSHint.edition</code> property.</li>
+            <li>JSHint now makes sure that null references are not subscripted within
+              <code>typeof</code> and <code>delete</code> operators.</li>
+            <li>JSHint now recognizes defensive semicolon technique:
+              <pre>; (function () { /* ... */ }());</pre>
+              But still warns when in cases like this one:
+              <pre>; function () {}</pre></li>
+            <li>Fixed an issue with <code>latedef</code> not working for a specific use of
+              variable hoisting.</li>
+            <li>Fixed an intermittent bug with JSHint failing with an exception instead of
+              returning a Too Many Errors message.</li>
+            <li>Fixed incorrect comments in JSC wrapper.</li>
+            <li>Fixed a bug with JSC wrapper not parsing options with spaces correctly.</li>
+          </ul>
+
+          <p>Thanks to Mike Pennisi and Dan Vanderkam.</p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="span5 columns">
+          <h3>December 30, 2011</h3>
         </div>
 
         <div class="span11 columns">
@@ -113,7 +144,7 @@
 
       <div class="row">
         <div class="span5 columns">
-          <h3>December 23, 2012</h3>
+          <h3>December 23, 2011</h3>
         </div>
 
         <div class="span11 columns">

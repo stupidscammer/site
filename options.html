@@ -447,8 +447,21 @@ World";</pre>
             <tr>
               <td class="name"><code>laxbreak</code></td>
               <td>
-                <p>This option suppresses all warnings about possibly unsafe line breakings in
-                your code.</p>
+                <p>This option suppresses most of the warnings about possibly unsafe line breakings in
+                your code. It doesn't suppress warnings about comma-first coding style. To suppress
+                those you have to use <code>laxcomma</code> (see below).</p>
+              </td>
+            </tr>
+
+            <tr>
+              <td class="name"><code>laxcomma</code></td>
+              <td>
+                <p>This option suppresses warnings about comma-first coding style:</p>
+<pre>var obj = {
+    name: 'Anton'
+  , handle: 'valueof'
+  , role: 'SW Engineer'
+};</pre>
               </td>
             </tr>
 

@@ -61,6 +61,39 @@
 
       <div class="row">
         <div class="span5 columns">
+          <h3>January 19, 2012</h3>
+        </div>
+
+        <div class="span11 columns">
+          <h2>New release: r05</h2>
+
+          <p>This release improves JSHint's support for variable hoisting and adds a new option,
+            <code>laxcomma</code>.</p>
+
+          <ul>
+            <li>JSHint now fully supports variables hoisting:
+<pre>/*jshint undef:true */
+
+function func() {
+  function innerOne() {
+    // Before: wrong error; Now: knows that innerTwo is defined below.
+    innerTwo();
+  }
+
+  function innerTwo() {
+  }
+}</pre></li>
+            <li>We added a new option, <code>laxcomma</code>, that allows you to use comma-first
+            coding style without turning on the <code>laxbreak</code> option. Related:
+            <a href="https://github.com/jshint/jshint/pull/340">GH-340</a>.</li>
+          </ul>
+
+          <p>Thanks to Charlie Robbins.</p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="span5 columns">
           <h3>January 08, 2012</h3>
         </div>
 

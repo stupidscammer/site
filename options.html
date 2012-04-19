@@ -80,7 +80,7 @@
                 <code>|</code> (OR) and others. There are two reasons why you would want to enable
                 this option:</p>
                 <ol>
-                  <li>Since JavaScript doesn't have integers (only doulbe precision floating-point
+                  <li>Since JavaScript doesn't have integers (only double precision floating-point
                   numbers) the bitwise operators here is very slow.</li>
                   <li>Bitwise operations are very rare in JavaScript programs and very often
                   <code>&amp;</code> is simply a mistyped <code>&amp;&amp;</code>.</li>
@@ -116,7 +116,7 @@
                 If you would like to learn more about type coercion in JavaScript, we recommend
                 <a href="http://javascriptweblog.wordpress.com/2011/02/07/truth-equality-and-javascript/">Truth, Equality and JavaScript</a> by Angus Croll.</p>
 
-                <p><strong>Note:</strong> even if this option is off, JSHint will check for unsafe
+                <p><strong>Note:</strong> Even if this option is off, JSHint will check for unsafe
                 comparisons like <code>!= null</code> unless option <code>eqnull</code> (see below)
                 is turned on.</p>
               </td>
@@ -125,7 +125,7 @@
             <tr>
               <td class="name"><code>forin</code></td>
               <td>
-                <p>This option requires all <code>for in</code> loops to filter objects' items.
+                <p>This option requires all <code>for in</code> loops to filter object's items.
                 The <code>for in</code> statement allows for looping through the names of all of
                 the properties of an object including those inherited throught the prototype chain.
                 This behavior can lead to unexpected items in your object so it is generally
@@ -188,7 +188,7 @@ new MyConstructor(); // -> [MyConstructor]
 MyConstructor();     // -> [DOMWindow]
 </pre>
 
-                <p>For more in-depth understanding on how <code>this</code> works, read
+                <p>For a more in-depth understanding on how <code>this</code> works, read
                 <a href="http://yehudakatz.com/2011/08/11/understanding-javascript-function-invocation-and-this/">Understanding JavaScript Function Invocation and "this"</a> by Yehuda Katz.</p>
               </td>
             </tr>
@@ -207,7 +207,7 @@ MyConstructor();     // -> [DOMWindow]
             <tr>
               <td class="name"><code>noempty</code></td>
               <td>
-                <p>This options warns when you have an empty block in your code. JSLint was
+                <p>This option warns when you have an empty block in your code. JSLint was
               originally warning for all empty blocks and we simply made it optional. There were
               no studies reporting that empty blocks in JavaScript break your code in any way.</p>
               </td>
@@ -265,12 +265,12 @@ function test() {
                 <p>This option requires all functions to run in EcmaScript 5's strict mode.
               <a href="https://developer.mozilla.org/en/JavaScript/Strict_mode">Strict mode</a> is
               a way to opt in to a restricted variant of JavaScript. Strict mode eliminates some
-              JavaScript pitfalls that didn't cause errors by changing them to produce errors and it
-              fixes mistakes that made it difficult for JavaScript engines to perform certain
-              optimizations.</p>
+              JavaScript pitfalls that didn't cause errors by changing them to produce errors. It
+              also fixes mistakes that made it difficult for the JavaScript engines to perform
+              certain optimizations.</p>
 
-                <p><strong>Note:</strong> This option enables strict mode for function scope only,
-                it <strong>prohibits</strong> the global scoped strict mode because it might break
+                <p><strong>Note:</strong> This option enables strict mode for function scope only.
+                It <strong>prohibits</strong> the global scoped strict mode because it might break
                 third-party widgets on your page. If you really want to use global strict mode,
                 see the <strong>globalstrict</strong> option.</p>
               </td>
@@ -436,8 +436,8 @@ World";</pre>
             <tr>
               <td class="name"><code>lastsemic</code></td>
               <td>
-                <p>This option suppresses warnings about missing semicolons but only when
-                the semicolon is omited for the last statement in a one-line block:</p>
+                <p>This option suppresses warnings about missing semicolons, but only when
+                the semicolon is omitted for the last statement in a one-line block:</p>
                 <pre>var name = (function() { return 'Anton' }());</pre>
                 <p>This is a very niche use case that is useful only when you use automatic
                 JavaScript code generators.</p>
@@ -501,7 +501,7 @@ for (var i = 0; i &lt; 10; i++) {
                 can be dangerous in JavaScript because all hell breaks loose if you accidentally
                 put a whitespace in between the escape character (<code>\</code>) and a new line.</p>
 
-                <p>Not that even though this option allows correct multi-line strings, it still
+                <p>Note that even though this option allows correct multi-line strings, it still
                 warns about multi-line strings without escape characters or with anything in between
                 the escape character and a whitespace.</p>
 
@@ -519,7 +519,7 @@ World"; // Warning, there is a space after \ (colored pink)</pre>
             <tr>
               <td class="name"><code>onecase</code></td>
               <td>
-                <p>This option suppresses watnings about switches with just one case. Most
+                <p>This option suppresses warnings about switches with just one case. Most
                 of the time you want to use <code>if</code> instead of <code>switch</code> if
                 there is only one case. However, some code generators prefer to generate
                 <code>switch</code> statements.</p>
@@ -592,7 +592,7 @@ World"; // Warning, there is a space after \ (colored pink)</pre>
               <td class="name"><code>validthis</code></td>
               <td>
                 <p>This option suppresses warnings about possible strict violations when
-                the code running in a strict mode <strong>and</strong> you use <code>this</code>
+                the code is running in strict mode <strong>and</strong> you use <code>this</code>
                 in a non-constructor function. You should use this option&mdash;in a function scope
                 only&mdash;when you are positive that your use of <code>this</code> is valid in
                 the strict mode (for example, if you call your function using
@@ -629,7 +629,7 @@ World"; // Warning, there is a space after \ (colored pink)</pre>
                   <a href="https://developer.mozilla.org/en/DOM/FileReader">FileReader</a> and
                   other new developments in the browser world.</p>
 
-                <p><strong>Note:</strong> this option
+                <p><strong>Note:</strong> This option
                   doesn't expose variables like <code>alert</code> or <code>console</code>. See
                   option <code>devel</code> for more information.</p>
               </td>
@@ -647,7 +647,7 @@ World"; // Warning, there is a space after \ (colored pink)</pre>
               <td>
                 <p>This option defines globals that are usually used for logging poor-man's
                 debugging: <code>console</code>, <code>alert</code>, etc. It is usually a good idea
-                to not to ship them in production because, for example, <code>console.log</code>
+                to not ship them in production because, for example, <code>console.log</code>
                 breaks in legacy versions of Internet Explorer.</p>
               </td>
             </tr>
@@ -673,7 +673,7 @@ World"; // Warning, there is a space after \ (colored pink)</pre>
             <tr>
               <td class="name"><code>node</code></td>
               <td><p>This option defines globals available when your code is running inside of
-              Node runtime environment. <a href="http://nodejs.org/">Node.js</a> is a server-side
+              the Node runtime environment. <a href="http://nodejs.org/">Node.js</a> is a server-side
               JavaScript environment that uses an asynchronous event-driven model.</td>
             </tr>
 
@@ -693,7 +693,7 @@ World"; // Warning, there is a space after \ (colored pink)</pre>
             <tr>
               <td class="name"><code>rhino</code></td>
               <td><p>This option defines globals available when your code is running inside of
-              Rhino runtime environment. <a href="http://www.mozilla.org/rhino/">Rhino</a> is an
+              the Rhino runtime environment. <a href="http://www.mozilla.org/rhino/">Rhino</a> is an
               open-source implementation of JavaScript written entirely in Java.</p></td>
             </tr>
 

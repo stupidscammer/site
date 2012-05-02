@@ -1,7 +1,7 @@
 application: jshint-site
 version: 4
 runtime: go
-api_version: 3
+api_version: go1
 
 handlers:
 - url: /
